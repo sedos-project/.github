@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Data - SEDOS Project</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">SEDOS Project</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data requirements <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Data</a>
+</li>
+                                    
+<li>
+    <a href="../metadata/" class="dropdown-item">Metadata</a>
+</li>
+                                    
+<li>
+    <a href="../ontology/" class="dropdown-item">Ontology</a>
+</li>
+                                    
+<li>
+    <a href="../licensing/" class="dropdown-item">Licensing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../overview/" class="nav-link">How to contribute data?</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../metadata/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#input#data" class="nav-link">Input data</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#datamodel" class="nav-link">Datamodel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#data#tables#and#table#naming#conventions" class="nav-link">Data tables and table naming conventions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#naming#of#column#headers" class="nav-link">Naming of column headers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#parameter#naming" class="nav-link">Parameter naming</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#output#data" class="nav-link">Output Data</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#output#datamodel" class="nav-link">Output Datamodel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="input#data">Input data</h1>
+<h2 id="datamodel">Datamodel</h2>
+<p>The <strong>oedatamodel-parameter</strong> (<a href="https://github.com/sedos-project/oedatamodel#oedatamodel-parameter">docs</a>) has to be used to provide input data in SEDOS. This choice was made to allow ontological annotation of data. This data model consists of two table types "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_scalar.csv">scalar</a>" and "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_timeseries.csv">timeseries</a>". Please choose the table type accordingly depending on the data you want to upload:</p>
+<ul>
+<li>Use scalar tables to provide parameters with no time relationships. To properly fill them read the <a href="https://github.com/sedos-project/oedatamodel#scalar-description">scalar model column description</a>. Use the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_scalars.json">example scalar package metadata</a> to write your own (see section <a href="http://127.0.0.1:8000/data_requirements/overview/#2#create#metadata">How to contribute data - 2. Create metadata</a></li>
+<li>To provide parameters with time relationships use a timeseries table. Use the <a href="https://github.com/sedos-project/oedatamodel#timeseries-description">timeseries model column description</a> to orient yourself with the fields and add metadata to your tables using the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_timeseries.json">example timeseries package metadata</a> as a reference.</li>
+</ul>
+<h2 id="data#tables#and#table#naming#conventions">Data tables and table naming conventions</h2>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<ul>
+<li>Create a new datapackage for each technology, e.g. wind_onshore, chp, ... <br></li>
+<li>You can use a single datapackage for both demand data and constraints (tech-independent parameters) if the table size is sufficient, e.g.:<br> * emission limit,<br> * natural domestic limit,<br> * WACC </li>
+</ul>
+</div>
+<p>To increase the discoverability and searchability of the data, we require the following table naming convention:</p>
+<ul>
+<li><strong>sedos_tech</strong>_[technologyname, e.g. wind_turbine]</li>
+<li><strong>sedos_demand</strong>_[demandname, e.g. household_residential]</li>
+<li><strong>sedos_constraint</strong>_[constraintname, e.g co2_emission-yearly]</li>
+</ul>
+<p>For example: </p>
+<ul>
+<li><strong>sedos_tech</strong>_wind_turbine</li>
+<li><strong>sedos_demand</strong>_household_residential</li>
+<li><strong>sedos_constraint</strong>_co2_emission-yearly</li>
+</ul>
+<h2 id="naming#of#column#headers">Naming of column headers</h2>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<ul>
+<li>Column headers naming conventions are in place due to technical reasons of the underlying relational postgre-sql database on the OEP. </li>
+</ul>
+</div>
+<p>The following conventions will be automatically checked when uploading a table on the OEP, and error messages will be raised in case of violation.
+Users need to correct them and their compliance is mandatory.</p>
+<h3 id="dos">Do's</h3>
+<ul>
+<li>use ASCII characters only</li>
+<li>use lower case only </li>
+<li>use the singular instead of the plural.</li>
+<li>use underscores</li>
+</ul>
+<h3 id="donts">Don'ts</h3>
+<ul>
+<li>no points</li>
+<li>no commas</li>
+<li>no spaces</li>
+<li>avoid dates</li>
+<li>don't start column header with a number</li>
+</ul>
+<h2 id="parameter#naming">Parameter naming</h2>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<ul>
+<li>Parameter names must be linked to a concept in an ontology</li>
+</ul>
+</div>
+<p>Parameter names (to specify technologies, constraints or techno-economic values) can basically be chosen freely. 
+However, it is of utmost importance that every parameter name is linked to a suitable ontological concept via the metadata to enable its clear interpretation.</p>
+<p>For more background information regarding for linking parameter names and ontology concepts, using OEM, see <a href="../ontology/#Ontological-annotation-of-data">here</a>.</p>
+<p>For a practical manual linking parameter names to a suitable ontology concepts, using oemetadata builder, see <a href="../ontology/#Link-a-parameter-name-to-a-suitable-ontology-concept">here</a>.</p>
+<h3 id="parameter#naming#in#case#of#missing#suitable#ontology#concept">Parameter naming in case of missing suitable ontology concept</h3>
+<p>It is likely that not every parameter concept is already covered by an ontology. In this case, linking your parameter name to a suitable ontology concept is not directly possible.</p>
+<p>It might, however, be indirectly possible by linking it to a distinct selection of related ontology concepts. 
+In this case you would link your parameter name to multiple related concepts.</p>
+<p>For a practical manual linking parameter names to multiple related ontology concepts, using oemetadata builder, see <a href="../ontology/#Link-a-parameter-name-to-multiple-related-ontology-concepts">here</a>.</p>
+<h1 id="output#data">Output Data</h1>
+<h2 id="output#datamodel">Output Datamodel</h2>
+<p>Datamodel: The <strong>OEDatamodel</strong> is used to represent input/output data for energysystem modelling. 
+Further information about the OEDatamodel can be found in the documentation at <a href="https://github.com/sedos-project/oedatamodel">sedos-project/oedatamodel</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>How to edit docs - SEDOS Project</title>
+        <title>Glossary - SEDOS Project</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -33,11 +33,32 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data requirements <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../data_requirements/input_data/" class="dropdown-item">Data</a>
+</li>
+                                    
+<li>
+    <a href="../data_requirements/metadata/" class="dropdown-item">Metadata</a>
+</li>
+                                    
+<li>
+    <a href="../data_requirements/ontology/" class="dropdown-item">Ontology</a>
+</li>
+                                    
+<li>
+    <a href="../data_requirements/licensing/" class="dropdown-item">Licensing</a>
+</li>
+                                </ul>
                             </li>
                             <li class="navitem">
-                                <a href="../datamodel/" class="nav-link">Datamodel</a>
+                                <a href="../data_requirements/overview/" class="nav-link">How to contribute data?</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Glossary</a>
                             </li>
                         </ul>
 
@@ -47,6 +68,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../data_requirements/overview/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -64,47 +95,84 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#glossary" class="nav-link">Glossary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Test how to upload new .md files and workflow with .github and organisation repos in sedos-project.</p>
-<ol>
-<li>
-<p>Clone repos</p>
-</li>
-<li>
-<p>setup your local environment and install mkdocs
-open your environment manager, e.g. miniconda3:</p>
-</li>
-<li>
-<p>create new environment
-$ conda create -n d_py310_sedos python=3.10</p>
-</li>
-<li>
-<p>install mkdocs
-$ pip install mkdocs</p>
-</li>
-<li>
-<p>create or modify .md files in <code>organisation/docs</code></p>
-</li>
-<li>
-<p>Add all your local changes: 
-$ git add .</p>
-</li>
-<li>
-<p>Commit your local changes
-$ git commit -m 'Extend documentation'</p>
-</li>
-<li>
-<p>Push commit
-$ git push</p>
-</li>
-<li>
-<p>TODO How to deploy on mkdocs</p>
-</li>
-</ol></div>
+<h1 id="glossary">Glossary</h1>
+<p>Quick reference for tools.</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Tool</th>
+<th>Abbreviation</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><a href="https://openenergy-platform.org/">OpenEnergyPlatform</a></td>
+<td>OEP</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>OEMetadata</td>
+<td>OEM</td>
+<td><a href="https://github.com/OpenEnergyPlatform/oemetadata/blob/develop/metadata/latest/metadata_key_description.md#oemetadata---key-description"> docs </a></td>
+</tr>
+<tr>
+<td></td>
+<td>OEdatamodel</td>
+<td>OED</td>
+<td><a href="https://github.com/sedos-project/oedatamodel"> docs </a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://modex.rl-institut.de/upload_datapackage/">OEdatamodel-API</a></td>
+<td></td>
+<td><a href="https://modex.rl-institut.de/"> docs </a></td>
+</tr>
+<tr>
+<td>🌾</td>
+<td>OpenAnnotationTool</td>
+<td>OAT</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://meta.rl-institut.de/meta_creator/151">oemetadata builder</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>🌠</td>
+<td><a href="https://energy.databus.dbpedia.org/">databus</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>📙</td>
+<td><a href="https://protege.stanford.edu/">Protégé</a></td>
+<td></td>
+<td><a href="http://protegeproject.github.io/protege/">docs</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
             </div>
         </div>
 
