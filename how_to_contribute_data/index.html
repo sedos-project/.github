@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>How to contribute data? - SEDOS Project</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">SEDOS Project</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data requirements <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../data_requirements/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../data_requirements/input_data/" class="dropdown-item">Data</a>
+</li>
+                                    
+<li>
+    <a href="../data_requirements/metadata/" class="dropdown-item">Metadata</a>
+</li>
+                                    
+<li>
+    <a href="../data_requirements/ontology/" class="dropdown-item">Ontology</a>
+</li>
+                                    
+<li>
+    <a href="../data_requirements/licensing/" class="dropdown-item">Licensing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">How to contribute data?</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../data_requirements/licensing/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../glossary/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#how#to#contribute#data" class="nav-link">How to contribute data?</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1#create#input#data#tables" class="nav-link">1. Create input data tables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2#create#metadata" class="nav-link">2. Create metadata</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3#initialize#table#on#the#oep" class="nav-link">3. Initialize table on the OEP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4#publish#datapackages" class="nav-link">4. Publish datapackages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#5#create#output#data#tables" class="nav-link">5. Create output data tables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="how#to#contribute#data">How to contribute data?<a class="headerlink" href="#how#to#contribute#data" title="Permanent link">&para;</a></h1>
+<p>The following instructions will guide you through the process of contributing data in the SEDOS project. Hyperlinks direct you to more detailed information regarding the subject.</p>
+<h2 id="1#create#input#data#tables">1. Create input data tables<a class="headerlink" href="#1#create#input#data#tables" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Collect and preprocess data into the tabular <a href="https://github.com/sedos-project/oedatamodel#oedatamodel-parameter">oedatamodel-parameter</a> (<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_scalar.csv">scalar</a> or <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_timeseries.csv">timeseries</a>) thereby following the <a href="../data_requirements/input_data/#Input-data-conventions">input data conventions</a></li>
+<li>Store data sources in <a href="https://bwsyncandshare.kit.edu/f/2388204355">BIB-file</a> and fill Bibtex-keys in "source"-column of the data table.</li>
+<li><strong>Note</strong> timeseries data and scalar data are stored in two different tables</li>
+</ul>
+<h2 id="2#create#metadata">2. Create metadata<a class="headerlink" href="#2#create#metadata" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Create the metadata according to the <a href="https://github.com/OpenEnergyPlatform/oemetadata#open-energy-family---open-energy-metadata-oemetadata">OEMetadata v.1.5.1</a> for each data table</li>
+<li>Use the <a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_scalars.json">scalar meta template</a> and the <a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_timeseries.json">timeseries meta template</a> to build your metadata</li>
+<li>Use the <a href="https://openenergy-platform.org/dataedit/oemetabuilder/">oemetadata builder</a> to create and edit your metadata <ul>
+<li>-&gt; copy scalar/timeseries meta template</li>
+<li>-&gt; click on blue button "Edit JSON" </li>
+<li>-&gt; click in opening window, with CTRL+A select all and paste scalar/timeseries meta template</li>
+<li>-&gt; click "save" to confirm</li>
+</ul>
+</li>
+<li>Fill in as many keys as possible, but at least the minimum <a href="../data_requirements/metadata/#required#metadata#information">required metadata information</a></li>
+<li>Annotate the keys <code>subject</code>, <code>isAbout</code> and/or <code>valueReference</code> with useful ontological concepts using the oemetadata builder <ul>
+<li>-&gt; go to the column you want to annotate</li>
+<li>-&gt; click on blue button "Add isAbout" or "Add Value reference" or "Add Subject"</li>
+<li>-&gt; click into the <code>name</code> line </li>
+<li>-&gt; type in the concept you're looking for</li>
+<li>-&gt; choose a suitable ontology concept from the dropdown menu</li>
+<li>-&gt; click to confirm</li>
+<li><img alt="wf" src="https://user-images.githubusercontent.com/7637364/191807277-712057b8-153c-4178-94a2-341ad8f010fd.gif" /></li>
+</ul>
+</li>
+<li>List all data sources in the form of Bibtex-keys under the <code>sources</code> key</li>
+<li>Add necessary license information to the sources according to the <a href="../data_requirements/licensing/#data-licencing">licensing guide</a></li>
+<li>todo @JH-rli: Will there be a save metadata button or does the user go back to the "Edit JSON" button to extract the metadata?</li>
+</ul>
+<h2 id="3#initialize#table#on#the#oep">3. Initialize table on the OEP<a class="headerlink" href="#3#initialize#table#on#the#oep" title="Permanent link">&para;</a></h2>
+<p>In order to add data to an OEP table, the (empty) table must be initialized on the OEP in the first place.
+In order to create the table, the resource from metadata is used, 
+whereby the name of the resource is used to define the OEP schema and the table name (i.e. "name": "model_draft.sedos_tech_wind_turbine") and 
+the fields from resource schema are used to create the related columns of the table.
+Initializing OEP table is done via: </p>
+<ul>
+<li>Visit <a href="https://modex.rl-institut.de/create_table/">oedatamodel-API</a></li>
+<li>Insert your OEP Username and Token </li>
+<li>Select metadata file to create OEP table from</li>
+<li>Submit </li>
+</ul>
+<h2 id="4#publish#datapackages">4. Publish datapackages<a class="headerlink" href="#4#publish#datapackages" title="Permanent link">&para;</a></h2>
+<p>The following step-by-step guide will show how to store data on the OEP and make it publicly available.
+As this guide is meant for developers of AP4-8, the <strong>oedatamodel-parameter</strong> will be used in the following.</p>
+<div class="admonition warning">
+<p class="admonition-title">Prerequisite for publishing on OEP<ol>
+<li>Data exists in <strong>oedatamodel-parameter</strong> format as CSV file</li>
+<li>Metadata exists with <a href="../data_requirements/metadata/#mandatory#set#of#metadata#information">mandatory set of metadata information</a> filled</li>
+<li>OEP <a href="https://openenergy-platform.org/user/register">user account</a></li>
+<li>Table has been created on OEP</li>
+</ol>
+</p>
+</div>
+<h3 id="41#upload#data#to#oep#with#oedatamodel-api">4.1 Upload data to OEP with oedatamodel-API<a class="headerlink" href="#41#upload#data#to#oep#with#oedatamodel-api" title="Permanent link">&para;</a></h3>
+<p>The oedatamodel-API uploads CSV files to the OEP. While uploading, incoming data is checked against 
+metadata schema from related table.
+Thus, </p>
+<ul>
+<li>Prepare upload data in CSV file according to metadata in related table</li>
+<li>Then open the <a href="https://modex.rl-institut.de/upload/">oedatamodel-API</a></li>
+<li>Insert your token, enter table name and schema (defaults to "model_draft") and select your CSV file</li>
+<li>Click <code>Datei absenden</code> to upload</li>
+</ul>
+<p>In case upload data contains errors (format, naming, etc.) an error report is returned. 
+Otherwise, data is appended to given table on the OEP.</p>
+<h3 id="42#release#data#on#the#databus">4.2 Release data on the databus<a class="headerlink" href="#42#release#data#on#the#databus" title="Permanent link">&para;</a></h3>
+<p>The oedatamodel-API can also register your datapackages on the databus. 
+Registering data on the databus must be done everytime, a new version of the data is available on the OEP.
+In order to register your new data you have to:</p>
+<ul>
+<li>Open the <a href="https://modex.rl-institut.de/databus/">oedatamodel-API</a></li>
+<li>Enter your username and API Token</li>
+<li>Enter table name and schema (defaults to "model_draft")</li>
+<li>Enter new version string (at least one row in your table must be present with given string in column "version")</li>
+<li>Submit it.</li>
+</ul>
+<p>Now, your data should be registered and available on the databus. 
+As the SEDOS pipeline regularly checks for updates on the databus, 
+your new data version should be considered in next pipeline build.</p>
+<h2 id="5#create#output#data#tables">5. Create output data tables<a class="headerlink" href="#5#create#output#data#tables" title="Permanent link">&para;</a></h2>
+<p><strong>@HeHu &amp; CM expand when process is clear</strong> <br></p>
+<ul>
+<li>Collect and postprocess modelling results into the tabular <a href="https://github.com/sedos-project/oedatamodel">OEDatamodel</a> by following the output data conventions](input_data.md#Output-data-conventions)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

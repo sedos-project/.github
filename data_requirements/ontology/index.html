@@ -38,6 +38,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
     <a href="../input_data/" class="dropdown-item">Data</a>
 </li>
                                     
@@ -55,7 +59,7 @@
                                 </ul>
                             </li>
                             <li class="navitem">
-                                <a href="../overview/" class="nav-link">How to contribute data?</a>
+                                <a href="../../how_to_contribute_data/" class="nav-link">How to contribute data?</a>
                             </li>
                             <li class="navitem">
                                 <a href="../../glossary/" class="nav-link">Glossary</a>
@@ -110,10 +114,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#link#a#parameter#name#to#multiple#related#ontology#concepts" class="nav-link">Link a parameter name to multiple related ontology concepts</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -121,8 +121,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="ontological#annotation#of#data">Ontological annotation of data</h1>
-<h2 id="basic#annotation#knowledge#with#oem">Basic annotation knowledge with OEM</h2>
+<h1 id="ontological#annotation#of#data">Ontological annotation of data<a class="headerlink" href="#ontological#annotation#of#data" title="Permanent link">&para;</a></h1>
+<h2 id="basic#annotation#knowledge#with#oem">Basic annotation knowledge with OEM<a class="headerlink" href="#basic#annotation#knowledge#with#oem" title="Permanent link">&para;</a></h2>
 <p>Ontological annotation of data means that data is linked to ontological concepts in the metadata. </p>
 <p>In SEDOS we use the <a href="../metadata/">oemetadata v.1.5.1</a> (OEM) as metadata standard. For more context about the OEM-keys in oemetadata v.1.5.1, see <a href="https://github.com/OpenEnergyPlatform/oemetadata/blob/develop/metadata/latest/metadata_key_description.md#metadata-keys-with-a-description-and-example">here</a>.</p>
 <p>In energy systems modelling, data is fed into a model via parameters and their associated values. In the following, when we speak about ontological annotation, we, therefore, speak of parameter names, which are linked to an ontological concept for definition.</p>
@@ -136,67 +136,69 @@
 <ul>
 <li>The general content of the table is annotated in the <code>subject</code> key</li>
 </ul>
-<p><pre class="highlight"><code class="language-json">{
-  "name": null,
-  "title": null,
-  "id": null,
-  "description": null,
-  "language": [
-    null
-  ],
-  "subject": [
-    {
-      "name": null,
-      "path": null
-    }
-  ],
-  "keywords": [
-    null
-  ],
-  "publicationDate": null
-}</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="kc">null</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="kc">null</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;publicationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 Below the resource section of the oemetadata v1.5.1 is shown, <a href="https://github.com/OpenEnergyPlatform/oemetadata/blob/develop/metadata/latest/metadata_key_description.md#resource-keys---schema">relevant for ontological annotation of parameter names</a>.</p>
-<h2 id="link#a#parameter#name#to#a#suitable#ontology#concept">Link a parameter name to a suitable ontology concept</h2>
-<h3 id="background#know-how">Background know-how</h3>
+<h2 id="link#a#parameter#name#to#a#suitable#ontology#concept">Link a parameter name to a suitable ontology concept<a class="headerlink" href="#link#a#parameter#name#to#a#suitable#ontology#concept" title="Permanent link">&para;</a></h2>
+<h3 id="background#know-how">Background know-how<a class="headerlink" href="#background#know-how" title="Permanent link">&para;</a></h3>
 <p>Parameters can occur in the column header or as column value when dealing with tabular data.  </p>
 <ul>
 <li>A) Parameters in the column headers are annotated in the <code>isAbout</code> key.</li>
 <li>B) Parameters occurring within a column are annotated in the <code>valueReference</code> key.</li>
 </ul>
-<pre class="highlight"><code class="language-json">{
-  "resources": [
-    {
-      "profile": null,
-      "name": null,
-      "path": null,
-      "format": null,
-      "encoding": null,
-      "schema": {
-        "fields": [
-          {
-            "name": null,
-            "description": null,
-            "type": null,
-            "unit": null,
-            "isAbout": [
-              {
-                "name": null,
-                "path": null
-              }
-            ],
-            "valueReference": [
-              {
-                "value": null,
-                "name": null,
-                "path": null
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
-}</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;resources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;isAbout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;valueReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p><strong>A) Parameters in the column headers</strong> - using <code>isAbout</code>:</p>
 <ol>
 <li><em>user-defined parameter name</em> is put in <em>name</em> (OEM-key 15.6.1.1), </li>
@@ -240,59 +242,60 @@ Below the resource section of the oemetadata v1.5.1 is shown, <a href="https://g
 </tr>
 </tbody>
 </table>
-<pre class="highlight"><code class="language-json">{
-  "resources": [
-    {
-      "profile": null,
-      "name": null,
-      "path": null,
-      "format": null,
-      "encoding": null,
-      "schema": {
-        "fields": [
-          {
-            "name": "wind_turbine",
-            "description": null,
-            "type": null,
-            "unit": null,
-            "isAbout": [
-              {
-                "name": "wind energy converting unit",
-                "path": "http://openenergy-platform.org/ontology/oeo/OEO_00000044"
-              }
-            ],
-            "valueReference": [
-              {
-                "value": null,
-                "name": null,
-                "path": null
-              }
-            ]
-          },
-          {
-            "name": "ro_diam",
-            "description": null,
-            "type": null,
-            "unit": "meter",
-            "isAbout": [
-              {
-                "name": "rotor diameter",
-                "path": "http://openenergy-platform.org/ontology/oeo/OEO_00020144"
-              }
-            ],
-            "valueReference": [
-              {
-                "value": null,
-                "name": null,
-                "path": null
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
-}</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;resources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wind_turbine&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;isAbout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wind energy converting unit&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/OEO_00000044&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;valueReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+<span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ro_diam&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;meter&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;isAbout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rotor diameter&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/OEO_00020144&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;valueReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p><strong>B) Parameters within a column</strong> - using <code>valueReference</code> and <code>isAbout</code>:</p>
 <p><em><code>valueReference</code></em><br></p>
 <ol>
@@ -325,53 +328,54 @@ Below the resource section of the oemetadata v1.5.1 is shown, <a href="https://g
 </tr>
 </tbody>
 </table>
-<pre class="highlight"><code class="language-json">{
-  "resources": [
-    {
-      "profile": null,
-      "name": null,
-      "path": null,
-      "format": null,
-      "encoding": null,
-      "schema": {
-        "fields": [
-          {
-            "name": "various_types_of_energy_carriers",
-            "description": null,
-            "type": null,
-            "unit": null,
-            "isAbout": [
-              {
-                "name": "portion of matter",
-                "path": "http://openenergy-platform.org/ontology/oeo/OEO_00000331"
-              }
-            ],
-            "valueReference": [
-              {
-                "value": "coal_HCV",
-                "name": "anthracite",
-                "path": "http://openenergy-platform.org/ontology/oeo/OEO_00000058"
-              },
-              {
-                "value": "green_diesel",
-                "name": "biodiesel",
-                "path": "http://openenergy-platform.org/ontology/oeo/OEO_00000071"
-              },
-              {
-                "value": "coal_LCV",
-                "name": "lignite",
-                "path": "http://openenergy-platform.org/ontology/oeo/OEO_00000251"
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
-}</code></pre>
-<h3 id="with#oemetadata#builder">With oemetadata builder</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;resources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;various_types_of_energy_carriers&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;isAbout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;portion of matter&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/OEO_00000331&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;valueReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;coal_HCV&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anthracite&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/OEO_00000058&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;green_diesel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;biodiesel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/OEO_00000071&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;coal_LCV&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lignite&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/OEO_00000251&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="with#oemetadata#builder">With oemetadata builder<a class="headerlink" href="#with#oemetadata#builder" title="Permanent link">&para;</a></h3>
 <p><img alt="wf" src="https://user-images.githubusercontent.com/7637364/191807277-712057b8-153c-4178-94a2-341ad8f010fd.gif" /></p>
-<h2 id="annotation#conventions#for#automatic#data#processing">Annotation conventions for automatic data processing</h2>
+<h2 id="annotation#conventions#for#automatic#data#processing">Annotation conventions for automatic data processing<a class="headerlink" href="#annotation#conventions#for#automatic#data#processing" title="Permanent link">&para;</a></h2>
 <p>In SEDOS, automatic data reasoning and processing are based mainly on ontological annotations in the metadata. 
 Thus, thorough annotation and following the conventions are important for frictionless data processing.</p>
 <ul>
@@ -379,17 +383,17 @@ Thus, thorough annotation and following the conventions are important for fricti
 <li>B) for MiMo technologies the input and output energy vectors (oem-key 15.6.1.5.1-2)</li>
 <li>C) parameter names (oem-key 15.6.1.6.1-3)</li>
 </ul>
-<h3 id="a#technology#and#technology_type">A) technology and technology_type</h3>
+<h3 id="a#technology#and#technology_type">A) technology and technology_type<a class="headerlink" href="#a#technology#and#technology_type" title="Permanent link">&para;</a></h3>
 <p>The technology and technology_type columns from the oedatamodel-concrete are filled with the information from the <code>subject</code> key.</p>
-<h3 id="b#input#and#output#energy#vectors#for#mimo#technologies">B) input and output energy vectors for MiMo technologies</h3>
+<h3 id="b#input#and#output#energy#vectors#for#mimo#technologies">B) input and output energy vectors for MiMo technologies<a class="headerlink" href="#b#input#and#output#energy#vectors#for#mimo#technologies" title="Permanent link">&para;</a></h3>
 <p>The input and output energy vectors of technologies in SEDOS' reference energy system are defined in an external table.</p>
 <p>For technologies with multiple input and/or output energy vectors it is not clear to which energy vector a parameter column refers.
 To account for this the energy vector shall be annotated as a second concept in the <code>isAbout</code> key.</p>
 <p>For example: A CHP plant table entailing two efficiency columns - for the electrical and thermal efficiency.</p>
-<h3 id="c#parameter#names">C) parameter names</h3>
-<h4 id="case1">Case1</h4>
+<h3 id="c#parameter#names">C) parameter names<a class="headerlink" href="#c#parameter#names" title="Permanent link">&para;</a></h3>
+<h4 id="case1">Case1<a class="headerlink" href="#case1" title="Permanent link">&para;</a></h4>
 <p><strong><em>In cases where there is a single suitable ontology concept in the OEO</em></strong> we'll use the keys <code>isAbout</code>, <code>valueReference</code> as explained above.</p>
-<h4 id="case2">Case2</h4>
+<h4 id="case2">Case2<a class="headerlink" href="#case2" title="Permanent link">&para;</a></h4>
 <p><strong><em>In cases where there are multiple ontology concepts in the OEO that are suitable by using them in composition</em></strong> we'll use them as list in the <code>name</code> key.</p>
 <p>For example: <em>thermal efficiency</em> of a heat power plant (as column in a tabular data set)</p>
 <p>The concept <em>thermal efficiency</em> is not (yet, as of 23.09.22) available in the OEO, but the concepts:</p>
@@ -397,92 +401,87 @@ To account for this the energy vector shall be annotated as a second concept in 
 <li>'heat generation process' <a href="http://openenergy-platform.org/ontology/oeo/oeo-physical/OEO_00010248">http://openenergy-platform.org/ontology/oeo/oeo-physical/OEO_00010248</a></li>
 <li>'energy conversion efficiency' <a href="http://openenergy-platform.org/ontology/oeo/OEO_00140049">http://openenergy-platform.org/ontology/oeo/OEO_00140049</a></li>
 </ul>
-<pre class="highlight"><code class="language-json">{
-  "resources": [
-    {
-      "profile": null,
-      "name": null,
-      "path": null,
-      "format": null,
-      "encoding": null,
-      "schema": {
-        "fields": [
-          {
-            "name": "thermal efficiency",
-            "description": "The column holds the values of the thermal efficiency of a heat power plant",
-            "type": null,
-            "unit": null,
-            "isAbout": [
-              {
-                "name": "heat generation process",
-                "path": "http://openenergy-platform.org/ontology/oeo/oeo-physical/OEO_00010248"
-              },
-              {
-                "name": "energy conversion efficiency",
-                "path": "http://openenergy-platform.org/ontology/oeo/OEO_00140049"
-              }
-            ],
-            "valueReference": [
-              {
-                "value": null,
-                "name": null,
-                "path": null
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
-}
-</code></pre>
-<p>todo: @JH-rli check with oemetadata builder functionalities</p>
-<h4 id="case3">Case3</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;resources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thermal efficiency&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The column holds the values of the thermal efficiency of a heat power plant&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;isAbout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;heat generation process&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/oeo-physical/OEO_00010248&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;energy conversion efficiency&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://openenergy-platform.org/ontology/oeo/OEO_00140049&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;valueReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="case3">Case3<a class="headerlink" href="#case3" title="Permanent link">&para;</a></h4>
 <p><strong><em>In cases where there is NO suitable ontology concept in the OEO</em></strong> we'll copy the term used in the data directly to the <code>name</code>key for further data processing in SEDOS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note<p>This is SEDOS-specific and needed for data processing. Normally one would leave the annotation in <code>isAbout</code> empty.</p>
 </p>
 </div>
 <p>For example: <em>fantasy power plant parameter</em></p>
-<pre class="highlight"><code class="language-json">{
-  "resources": [
-    {
-      "profile": null,
-      "name": null,
-      "path": null,
-      "format": null,
-      "encoding": null,
-      "schema": {
-        "fields": [
-          {
-            "name": "fantasy power plant paramter",
-            "description": "The column holds values of a parameter, whose concept is not yet available in the OEO, of a fantasy power plant ",
-            "type": null,
-            "unit": null,
-            "isAbout": [
-              {
-                "name": "fantasy power plant parameter",
-                "path": null
-              }
-            ],
-            "valueReference": [
-              {
-                "value": null,
-                "name": null,
-                "path": null
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
-}</code></pre>
-<h2 id="link#a#parameter#name#to#multiple#related#ontology#concepts">Link a parameter name to multiple related ontology concepts</h2>
-<p>todo: decide on workflow, considering oemetadata builder yet limited functionality</p>
-<h3 id="via#oemetadata#builder">Via oemetadata builder</h3>
-<p>todo: decide on workflow, considering oemetadata builder yet limited functionality</p>
-<p>``</p></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;resources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fantasy power plant paramter&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The column holds values of a parameter, whose concept is not yet available in the OEO, of a fantasy power plant &quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;isAbout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fantasy power plant parameter&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;valueReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></div>
             </div>
         </div>
 
