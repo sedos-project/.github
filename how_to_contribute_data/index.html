@@ -166,8 +166,9 @@
 <h2 id="3#initialize#table#on#the#oep">3. Initialize table on the OEP<a class="headerlink" href="#3#initialize#table#on#the#oep" title="Permanent link">&para;</a></h2>
 <p>In order to add data to an OEP table, the (empty) table must be initialized on the OEP in the first place.
 In order to create the table, the resource from metadata is used, 
-whereby the name of the resource is used to define the OEP schema and the table name (i.e. "name": "model_draft.sedos_tech_wind_turbine") and 
-the fields from resource schema are used to create the related columns of the table.
+whereby the <a href="../data_requirements/metadata/#resource-keys">name of the resource</a> is used to define the OEP schema and the table name (table_name, to avoid spaces) 
+in a pattern of <code>"shema.table_name"</code> (i.e. "name": "model_draft.sedos_tech_wind_turbine") </p>
+<p>And the fields from resource schema are used to create the related columns of the table. 
 Initializing OEP table is done via: </p>
 <ul>
 <li>Visit <a href="https://modex.rl-institut.de/create_table/">oedatamodel-API</a></li>
@@ -183,6 +184,8 @@ As this guide is meant for developers of AP4-8, the <strong>oedatamodel-paramete
 <li>Data exists in <strong>oedatamodel-parameter</strong> format as CSV file</li>
 <li>Metadata exists with <a href="../data_requirements/metadata/#mandatory#set#of#metadata#information">mandatory set of metadata information</a> filled</li>
 <li>OEP <a href="https://openenergy-platform.org/user/register">user account</a></li>
+<li>Databus <a href="https://energy.databus.dbpedia.org/">user account</a> (Create account on "Login" button)</li>
+<li>Databus API Key (On Databus go to Profile -&gt; Settings -&gt; Scroll down to "Create New API Key" to generate key)</li>
 <li>Table has been created on OEP</li>
 </ol>
 </p>
@@ -205,7 +208,7 @@ Registering data on the databus must be done everytime, a new version of the dat
 In order to register your new data you have to:</p>
 <ul>
 <li>Open the <a href="https://modex.rl-institut.de/databus/">oedatamodel-API</a></li>
-<li>Enter your username and API Token</li>
+<li>Enter your username (username is not email address) and API Token</li>
 <li>Enter table name and schema (defaults to "model_draft")</li>
 <li>Enter new version string (at least one row in your table must be present with given string in column "version")</li>
 <li>Submit it.</li>

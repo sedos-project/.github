@@ -137,6 +137,13 @@
 <li>Use scalar tables to provide parameters with no time relationships. To properly fill them read the <a href="https://github.com/sedos-project/oedatamodel#scalar-description">scalar model column description</a>. Use the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_scalars.json">example scalar package metadata</a> to write your own (see section <a href="http://127.0.0.1:8000/data_requirements/overview/#2#create#metadata">How to contribute data - 2. Create metadata</a></li>
 <li>To provide parameters with time relationships use a timeseries table. Use the <a href="https://github.com/sedos-project/oedatamodel#timeseries-description">timeseries model column description</a> to orient yourself with the fields and add metadata to your tables using the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_timeseries.json">example timeseries package metadata</a> as a reference.</li>
 </ul>
+<h3 id="input#and#output#energy#vectors">Input and output energy vectors<a class="headerlink" href="#input#and#output#energy#vectors" title="Permanent link">&para;</a></h3>
+<p>The input and output energy vectors of technologies in SEDOS' reference energy system are defined in an external table.</p>
+<p>For technologies with multiple input and/or output energy vectors it is not clear to which energy vector a 
+parameter column refers.</p>
+<p>To account for this the inputs and outputs of process parameters will be collected in separate tables in the 
+database (see below).
+<img alt="mimo_tables" src="../../graphics/mimo_tables.jpg" /></p>
 <h2 id="data#tables">Data tables<a class="headerlink" href="#data#tables" title="Permanent link">&para;</a></h2>
 <h3 id="naming#conventions#for#data#tables#and#parameters">Naming conventions for data tables and parameters<a class="headerlink" href="#naming#conventions#for#data#tables#and#parameters" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -167,6 +174,8 @@ Users need to correct them and their compliance is mandatory.</p>
 </ul>
 <h3 id="delimiter">Delimiter<a class="headerlink" href="#delimiter" title="Permanent link">&para;</a></h3>
 <p>Use semicolon <code>;</code> as the column delimiter. </p>
+<h3 id="decimal#separator">Decimal separator<a class="headerlink" href="#decimal#separator" title="Permanent link">&para;</a></h3>
+<p>Use point <code>.</code> as decimal separator. </p>
 <h3 id="table#naming">Table naming<a class="headerlink" href="#table#naming" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Note</p>
