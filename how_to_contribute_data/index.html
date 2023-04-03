@@ -46,6 +46,10 @@
 </li>
                                     
 <li>
+    <a href="../data_requirements/nomenclature/" class="dropdown-item">Nomenclature</a>
+</li>
+                                    
+<li>
     <a href="../data_requirements/metadata/" class="dropdown-item">Metadata</a>
 </li>
                                     
@@ -161,19 +165,19 @@
 </li>
 <li>List all data sources in the form of Bibtex-keys under the <code>sources</code> key</li>
 <li>Add necessary license information to the sources according to the <a href="../data_requirements/licensing/#data-licencing">licensing guide</a></li>
-<li>todo @JH-rli: Will there be a save metadata button or does the user go back to the "Edit JSON" button to extract the metadata?</li>
 </ul>
 <h2 id="3#initialize#table#on#the#oep">3. Initialize table on the OEP<a class="headerlink" href="#3#initialize#table#on#the#oep" title="Permanent link">&para;</a></h2>
 <p>In order to add data to an OEP table, the (empty) table must be initialized on the OEP in the first place.
 In order to create the table, the resource from metadata is used, 
-whereby the <a href="../data_requirements/metadata/#resource-keys">name of the resource</a> is used to define the OEP schema and the table name (table_name, to avoid spaces) 
-in a pattern of <code>"shema.table_name"</code> (i.e. "name": "model_draft.sedos_tech_wind_turbine") </p>
-<p>And the fields from resource schema are used to create the related columns of the table. 
-Initializing OEP table is done via: </p>
+whereby the <a href="../data_requirements/metadata/#resource#keys">name of the resource</a> (OEM-key 15.2) is used to define the 
+OEP schema and the table name (table_name, to avoid spaces) in a pattern of <code>"schema.table_name"</code> (i.e. "name": 
+"model_draft.sedos_tech_wind_turbine") </p>
+<p>The fields from <a href="../data_requirements/metadata/#resource#keys#-#schema">resource schema</a> are used to create the 
+columns of the table. Initializing OEP table is done via: </p>
 <ul>
 <li>Visit <a href="https://modex.rl-institut.de/create_table/">oedatamodel-API</a></li>
 <li>Insert your OEP Username and Token </li>
-<li>Select metadata file to create OEP table from</li>
+<li>Select metadata file to create OEP table</li>
 <li>Submit </li>
 </ul>
 <h2 id="4#publish#datapackages">4. Publish datapackages<a class="headerlink" href="#4#publish#datapackages" title="Permanent link">&para;</a></h2>
@@ -186,7 +190,7 @@ As this guide is meant for developers of AP4-8, the <strong>oedatamodel-paramete
 <li>OEP <a href="https://openenergy-platform.org/user/register">user account</a></li>
 <li>Databus <a href="https://energy.databus.dbpedia.org/">user account</a> (Create account on "Login" button)</li>
 <li>Databus API Key (On Databus go to Profile -&gt; Settings -&gt; Scroll down to "Create New API Key" to generate key)</li>
-<li>Table has been created on OEP</li>
+<li>Table has been created on OEP (3. Initialize table on the OEP)</li>
 </ol>
 </p>
 </div>
@@ -205,22 +209,21 @@ Otherwise, data is appended to given table on the OEP.</p>
 <h3 id="42#release#data#on#the#databus">4.2 Release data on the databus<a class="headerlink" href="#42#release#data#on#the#databus" title="Permanent link">&para;</a></h3>
 <p>The oedatamodel-API can also register your datapackages on the databus. 
 Registering data on the databus must be done everytime, a new version of the data is available on the OEP.
+In doing so, other users will be able to query the most recent data from the OEP or to query for a specific data 
+version.
 In order to register your new data you have to:</p>
 <ul>
 <li>Open the <a href="https://modex.rl-institut.de/databus/">oedatamodel-API</a></li>
 <li>Enter your username (username is not email address) and API Token</li>
 <li>Enter table name and schema (defaults to "model_draft")</li>
 <li>Enter new version string (at least one row in your table must be present with given string in column "version")</li>
-<li>Submit it.</li>
+<li>Submit</li>
 </ul>
 <p>Now, your data should be registered and available on the databus. 
 As the SEDOS pipeline regularly checks for updates on the databus, 
 your new data version should be considered in next pipeline build.</p>
 <h2 id="5#create#output#data#tables">5. Create output data tables<a class="headerlink" href="#5#create#output#data#tables" title="Permanent link">&para;</a></h2>
-<p><strong>@HeHu &amp; CM expand when process is clear</strong> <br></p>
-<ul>
-<li>Collect and postprocess modelling results into the tabular <a href="https://github.com/sedos-project/oedatamodel">OEDatamodel</a> by following the output data conventions](input_data.md#Output-data-conventions)</li>
-</ul></div>
+<p>@HeHu &amp; CM expand when process is clear </p></div>
             </div>
         </div>
 

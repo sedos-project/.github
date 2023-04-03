@@ -46,6 +46,10 @@
 </li>
                                     
 <li>
+    <a href="../nomenclature/" class="dropdown-item">Nomenclature</a>
+</li>
+                                    
+<li>
     <a href="../metadata/" class="dropdown-item">Metadata</a>
 </li>
                                     
@@ -78,7 +82,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../metadata/" class="nav-link">
+                                <a rel="next" href="../nomenclature/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -132,18 +136,97 @@
 
 <h1 id="input#data">Input data<a class="headerlink" href="#input#data" title="Permanent link">&para;</a></h1>
 <h2 id="datamodel">Datamodel<a class="headerlink" href="#datamodel" title="Permanent link">&para;</a></h2>
-<p>The <strong>oedatamodel-parameter</strong> (<a href="https://github.com/sedos-project/oedatamodel#oedatamodel-parameter">docs</a>) has to be used to provide input data in SEDOS. This choice was made to allow ontological annotation of data. This data model consists of two table types "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_scalar.csv">scalar</a>" and "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_timeseries.csv">timeseries</a>". Please choose the table type accordingly depending on the data you want to upload:</p>
+<p>The <strong>oedatamodel-parameter</strong> (<a href="https://github.com/sedos-project/oedatamodel#oedatamodel-parameter">docs</a>) has to 
+be used to provide input data in SEDOS. This choice was made to allow ontological annotation of data. The data 
+model consists of two table types: "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_scalar.csv">scalar</a>" and "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_timeseries.csv">timeseries</a>". Please choose the table type accordingly, depending on the data you want to upload:</p>
 <ul>
-<li>Use scalar tables to provide parameters with no time relationships. To properly fill them read the <a href="https://github.com/sedos-project/oedatamodel#scalar-description">scalar model column description</a>. Use the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_scalars.json">example scalar package metadata</a> to write your own (see section <a href="http://127.0.0.1:8000/data_requirements/overview/#2#create#metadata">How to contribute data - 2. Create metadata</a></li>
-<li>To provide parameters with time relationships use a timeseries table. Use the <a href="https://github.com/sedos-project/oedatamodel#timeseries-description">timeseries model column description</a> to orient yourself with the fields and add metadata to your tables using the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_timeseries.json">example timeseries package metadata</a> as a reference.</li>
+<li>Use scalar tables to provide parameters with no relation to a timeindex. To properly fill the table, read the 
+  <a href="https://github.com/sedos-project/oedatamodel#scalar-description">scalar model column description</a>. Use the 
+  <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_scalars.json">example scalar package metadata</a> to write your own metadata 
+  (see section <a href="http://127.0.0.1:8000/data_requirements/overview/#2#create#metadata">How to contribute data - 2. Create metadata</a></li>
+<li>Use a timeseries table to provide parameters with relation to a timeindex. Use the <a href="https://github.com/sedos-project/oedatamodel#timeseries-description">timeseries model column description</a> to make yourself familiar with the 
+  fields and add metadata to your tables using the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_timeseries.json">example timeseries package metadata</a> as a reference.</li>
 </ul>
 <h3 id="input#and#output#energy#vectors">Input and output energy vectors<a class="headerlink" href="#input#and#output#energy#vectors" title="Permanent link">&para;</a></h3>
-<p>The input and output energy vectors of technologies in SEDOS' reference energy system are defined in an external table.</p>
-<p>For technologies with multiple input and/or output energy vectors it is not clear to which energy vector a 
-parameter column refers.</p>
-<p>To account for this the inputs and outputs of process parameters will be collected in separate tables in the 
-database (see below).
-<img alt="mimo_tables" src="../../graphics/mimo_tables.jpg" /></p>
+<p>The input and output energy vectors of processes in SEDOS' reference energy system are defined in an external 
+table on the BW Sync&amp;Share, in the sheet <a href="https://bwsyncandshare.kit.edu/f/2458081675">input_output</a>.</p>
+<p>For processes with multiple input and/or output energy vectors it might not clear to which energy vector a 
+parameter column refers. Thus, the information has to be specified if needed.</p>
+<p>By <code>default</code>, <strong>all</strong> parameters of a process as assigned to all inputs and outputs of a process from the BW 
+Sync&amp;Share table, sheet <a href="https://bwsyncandshare.kit.edu/f/2458081675">processes</a>
+(the <code>default</code> does not appear in the input_output sheet, but is used in the backend of the data pipeline). <br> 
+<br>
+If needed, the <code>default</code> can be overwritten, simply by assigning other input(s) and output(s) to a specific 
+parameter of the process in the <a href="https://bwsyncandshare.kit.edu/f/2458081675">input_output</a> sheet.</p>
+<div class="admonition note">
+<p class="admonition-title">input_output insertion conventions</p>
+<ul>
+<li>separate inputs or outputs with <code>,</code> (comma) as in the input_output sheet below</li>
+</ul>
+</div>
+<p><strong>Example</strong> process: mob_road_mcar_ice_pass_diesel</p>
+<p>input_output sheet</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>process</th>
+<th>input</th>
+<th>output</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>energy_conversion_efficiency_diesel</td>
+<td>mob_road_mcar_ice_pass_diesel</td>
+<td>diesel</td>
+<td>pkm_road_mcar_short_exo, pkm_road_mcar_long_ex</td>
+<td></td>
+</tr>
+<tr>
+<td>energy_conversion_efficiency_biodiesel</td>
+<td>mob_road_mcar_ice_pass_diesel</td>
+<td>biodiesel</td>
+<td>pkm_road_mcar_short_exo, pkm_road_mcar_long_ex</td>
+<td></td>
+</tr>
+<tr>
+<td>emission_factor</td>
+<td>mob_road_mcar_ice_pass_diesel</td>
+<td>diesel, biodiesel</td>
+<td>CO2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>In the <a href="https://bwsyncandshare.kit.edu/f/2458081675">processes</a> sheet, the process is assigned to:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Process</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[diesel, syndiesel_ren, syndiesel_conv, biodiesel]</td>
+<td>mob_road_mcar_ice_pass_diesel</td>
+<td>pkm_road_mcar_short_exo+ pkm_road_mcar_long_exo+CO2</td>
+</tr>
+</tbody>
+</table>
+<p>In the example it is assumed that the <em>mob_road_mcar_ice_pass_diesel</em> emits the same amount of CO2 when using diesel or biodiesel as fuel.
+However, the process has different efficiencies depending on the fuel. <br></p>
+<p>All other process parameters of <em>mob_road_mcar_ice_pass_diesel</em>, such as: <em>investment_cost, operational_life_time, 
+mileage, occupancy_rate, market_share</em> are assigned to the <code>default</code> inputs (diesel, syndiesel_ren, syndiesel_conv, 
+biodiesel) and outputs (pkm_road_mcar_short_exo, pkm_road_mcar_long_exo, CO2) in the backend from the table sheet 
+<a href="https://bwsyncandshare.kit.edu/f/2458081675">processes</a>.  <br></p>
+<p>It is for the data providers (WP4-8) to assess whether this is correct for each process with respect to the 
+modelling.  <br>
+If the <code>default</code> is incorrect, the <a href="https://bwsyncandshare.kit.edu/f/2458081675">input_output</a> sheet 
+should be used to specify process parameters' inputs and outputs accordingly.</p>
 <h2 id="data#tables">Data tables<a class="headerlink" href="#data#tables" title="Permanent link">&para;</a></h2>
 <h3 id="naming#conventions#for#data#tables#and#parameters">Naming conventions for data tables and parameters<a class="headerlink" href="#naming#conventions#for#data#tables#and#parameters" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -176,26 +259,189 @@ Users need to correct them and their compliance is mandatory.</p>
 <p>Use semicolon <code>;</code> as the column delimiter. </p>
 <h3 id="decimal#separator">Decimal separator<a class="headerlink" href="#decimal#separator" title="Permanent link">&para;</a></h3>
 <p>Use point <code>.</code> as decimal separator. </p>
+<h3 id="versioning#convention">Versioning convention<a class="headerlink" href="#versioning#convention" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Versioning pattern</p>
+<ul>
+<li><code>v</code> + <code>number</code> </li>
+</ul>
+</div>
+<p>Version your data with <strong>lowercase</strong> letter <code>v</code> and arabic number, e.g.: v1</p>
+<p><strong>Increase the version when</strong> you want to <strong>add or update data</strong> to a table that has been already uploaded to the OEP. 
+<br></p>
+<p><strong>Reasoning:</strong> By following the versioning convention the end-user only needs to know the latest data version of a 
+given process. Thus, querying the latest process data version will return a full set of coherent input data. 
+<br>
+Conversely, users only need to know one version number when querying older data versions to work with a full 
+set of coherent input data for a process. </p>
+<p>Example: </p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>region</th>
+<th>year</th>
+<th>capital_costs</th>
+<th>lifetime</th>
+<th>bandwidth_type</th>
+<th>version</th>
+<th>method</th>
+<th>source</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>DE</td>
+<td>2020</td>
+<td><strong><span style="color:blue"> 1 </span></strong></td>
+<td><strong><span style="color:blue"> 5 </span></strong></td>
+<td></td>
+<td><strong><span style="color:blue"> v1 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>DE</td>
+<td>2025</td>
+<td><strong><span style="color:blue"> 1.5 </span></strong></td>
+<td><strong><span style="color:blue"> 6 </span></strong></td>
+<td></td>
+<td><strong><span style="color:blue"> v1 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>DE</td>
+<td>2020</td>
+<td>1</td>
+<td>5</td>
+<td></td>
+<td><strong><span style="color:green"> v2 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>DE</td>
+<td>2025</td>
+<td>1.5</td>
+<td>6</td>
+<td></td>
+<td><strong><span style="color:green"> v2 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>DE</td>
+<td>2030</td>
+<td><strong><span style="color:green"> 2 </span></strong></td>
+<td><strong><span style="color:green"> 8 </span></strong></td>
+<td></td>
+<td><strong><span style="color:green"> v2 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>DE</td>
+<td>2020</td>
+<td>1</td>
+<td>5</td>
+<td></td>
+<td><strong><span style="color:red"> v3 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>DE</td>
+<td>2025</td>
+<td>1.5</td>
+<td>6</td>
+<td></td>
+<td><strong><span style="color:red"> v3 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>DE</td>
+<td>2030</td>
+<td>2</td>
+<td><strong><span style="color:red"> 15 </span></strong></td>
+<td></td>
+<td><strong><span style="color:red"> v3 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>DE</td>
+<td>2020</td>
+<td>1</td>
+<td>5</td>
+<td></td>
+<td><strong><span style="color:orange"> v4 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>DE</td>
+<td>2025</td>
+<td>1.5</td>
+<td>6</td>
+<td></td>
+<td><strong><span style="color:orange"> v4 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>DE</td>
+<td>2030</td>
+<td><strong><span style="color:orange"> 4 </span></strong></td>
+<td>15</td>
+<td></td>
+<td><strong><span style="color:orange"> v4 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="color:blue"> v1 </span></strong>: <strong>Initial data</strong></p>
+<p><strong><span style="color:green"> v2 </span></strong>: <strong>Adding data</strong> to your csv table requires a new version <code>v2</code> for new 
+datapoints (capital_cost and lifetime in 2030, row=5), including a copy the existing data from <code>v1</code> as version <code>v2</code> 
+(reasoning see above)</p>
+<p><strong><span style="color:red"> v3 </span></strong>: <strong>Updating a datapoint</strong> (lifetime, row=8) requires a new version 
+<code>v3</code>, including a copy the existing data from <code>v2</code> as version <code>v3</code></p>
+<p><strong><span style="color:orange"> v4 </span></strong>: <strong>Updating a datapoint</strong> (capital_costs, row=11) requires a new 
+version <code>v4</code>, including a copy the existing data from <code>v3</code> as version <code>v4</code></p>
 <h3 id="table#naming">Table naming<a class="headerlink" href="#table#naming" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Note</p>
 <ul>
-<li>Create a new datapackage for each technology, e.g. wind_onshore, chp, ... <br></li>
+<li>Create a new datapackage for each process, e.g. wind_onshore, chp, ... <br></li>
 <li>You can use a single datapackage for both demand data and constraints (tech-independent parameters) if the table size is sufficient, e.g.:<br> * emission limit,<br> * natural domestic limit,<br> * WACC </li>
 </ul>
 </div>
-<p>To increase the discoverability and searchability of the data, we require the following table naming convention:</p>
-<ul>
-<li><strong>sedos_tech</strong>_[technologyname, e.g. wind_turbine]</li>
-<li><strong>sedos_demand</strong>_[demandname, e.g. household_residential]</li>
-<li><strong>sedos_constraint</strong>_[constraintname, e.g co2_emission-yearly]</li>
-</ul>
-<p>For example: </p>
-<ul>
-<li><strong>sedos_tech</strong>_wind_turbine</li>
-<li><strong>sedos_demand</strong>_household_residential</li>
-<li><strong>sedos_constraint</strong>_co2_emission-yearly</li>
-</ul>
+<p>Follow the <a href="../nomenclature/">nomenclature</a> for table and process naming.</p>
 <h2 id="parameter#naming">Parameter naming<a class="headerlink" href="#parameter#naming" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Note</p>
@@ -203,7 +449,7 @@ Users need to correct them and their compliance is mandatory.</p>
 <li>Parameter names must be linked to a concept in an ontology</li>
 </ul>
 </div>
-<p>Parameter names (to specify technologies, constraints or techno-economic values) can basically be chosen freely. 
+<p>Parameter names (to specify processes, constraints or techno-economic values) can basically be chosen freely. 
 However, it is of utmost importance that every parameter name is linked to a suitable ontological concept via the metadata to enable its clear interpretation.
 <br> In case you cannot find a suitable ontology concept (e.g. because it's not in the ontology yet), please make sure 
 your chosen parameter name is clear and common in the domain. In this case avoid acronyms.</p>
