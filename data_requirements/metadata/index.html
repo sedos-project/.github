@@ -114,10 +114,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#datatypes" class="nav-link">Datatypes</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -137,6 +133,10 @@
 <h2 id="mandatory#set#of#metadata#information">Mandatory set of metadata information<a class="headerlink" href="#mandatory#set#of#metadata#information" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">OEMetadata templates exist<p>You can build upon metadata templates (<a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_scalars.json">scalar template</a> and <a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_timeseries.json">timeseries template</a>).</p>
+</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Technical upload requirement<p>OEM-key 15.2 is technically required for upload with oedatamodel-API</p>
 </p>
 </div>
 <p>Providing the following oem-keys when submitting your metadata is mandatory.</p>
@@ -394,10 +394,10 @@
 <td style="text-align: center;">tabular-data-resource</td>
 </tr>
 <tr>
-<td style="text-align: center;">15.2</td>
-<td style="text-align: center;">name</td>
-<td style="text-align: center;">A name for the entire data package. The name must consist of only lowercase alphanumeric characters or underscore. It must not start with a number or underscore. In a database, this  will be the name of the table within the  schema containing it.  The name can correspond to the file name (minus the file-extension) of the data file describing the resource, if it complies with the naming convention above. Name also contains information about the <a href="https://openenergy-platform.org/dataedit/schemas">shema</a> on the OEP, use "." to seperate shema from table name.</td>
-<td style="text-align: center;">openstreetmap.osm_deu_line</td>
+<td style="text-align: center;"><strong><span style="color:red"> 15.2 </span></strong></td>
+<td style="text-align: center;"><strong><span style="color:red"> name </span></strong></td>
+<td style="text-align: center;"><strong><span style="color:red"> Requiered for oedatamodel upload </span></strong> <br> A name for the entire data package. The name must consist of only lowercase alphanumeric characters or underscore. It must not start with a number or underscore. In a database, this  will be the name of the table within the  schema containing it.  The name can correspond to the file name (minus the file-extension) of the data file describing the resource, if it complies with the naming convention above. Name also contains information about the <a href="https://openenergy-platform.org/dataedit/schemas">shema</a> on the OEP, use "." to seperate shema from table name.</td>
+<td style="text-align: center;"><strong><span style="color:red"> model_draft.my_naming_convention_conform_table_name </span></strong></td>
 </tr>
 <tr>
 <td style="text-align: center;">15.3</td>
@@ -528,39 +528,6 @@
 <td style="text-align: center;">@context</td>
 <td style="text-align: center;">Necessary for registering Data on the Databus and to be SPARQL-able</td>
 <td style="text-align: center;">https://raw.githubusercontent.com/OpenEnergyPlatform/oemetadata/master/metadata/latest/context.json</td>
-</tr>
-</tbody>
-</table>
-<h2 id="datatypes">Datatypes<a class="headerlink" href="#datatypes" title="Permanent link">&para;</a></h2>
-<p>Available datatypes and corresponding formatting examples:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">dtype</th>
-<th style="text-align: center;">example</th>
-<th style="text-align: center;">comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">json</td>
-<td style="text-align: center;">"{""key1"": ""text"", ""key2"": ""text""}"</td>
-<td style="text-align: center;"><strong>csv</strong> seperator should be ";"</td>
-</tr>
-<tr>
-<td style="text-align: center;">float array</td>
-<td style="text-align: center;">[0.02, 279.5]</td>
-<td style="text-align: center;">arrays with strings should be formatted as strings ("['string1', 'string2']"</td>
-</tr>
-<tr>
-<td style="text-align: center;">text</td>
-<td style="text-align: center;">"text"</td>
-<td style="text-align: center;">String data should have text as datatype (text serves as "string")</td>
-</tr>
-<tr>
-<td style="text-align: center;">integer</td>
-<td style="text-align: center;">27</td>
-<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table></div>

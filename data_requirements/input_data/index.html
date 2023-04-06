@@ -267,14 +267,227 @@ Users need to correct them and their compliance is mandatory.</p>
 </ul>
 </div>
 <p>Version your data with <strong>lowercase</strong> letter <code>v</code> and arabic number, e.g.: v1</p>
-<p><strong>Increase the version when</strong> you want to <strong>add or update data</strong> to a table that has been already uploaded to the OEP. 
+<p><strong>Increase the version when</strong> you want to <strong>add or update data</strong> to a table that has been already uploaded to the OEP.
+The oedatamodel-API will append new data versions to an existing OEP table.
 <br></p>
 <p><strong>Reasoning:</strong> By following the versioning convention the end-user only needs to know the latest data version of a 
 given process. Thus, querying the latest process data version will return a full set of coherent input data. 
 <br>
 Conversely, users only need to know one version number when querying older data versions to work with a full 
 set of coherent input data for a process. </p>
-<p>Example: </p>
+<p><strong><span style="color:blue"> v1 </span></strong>: <strong>Initial data</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>region</th>
+<th>year</th>
+<th>capital_costs</th>
+<th>lifetime</th>
+<th>bandwidth_type</th>
+<th>version</th>
+<th>method</th>
+<th>source</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>DE</td>
+<td>2020</td>
+<td><strong><span style="color:blue"> 1 </span></strong></td>
+<td><strong><span style="color:blue"> 5 </span></strong></td>
+<td></td>
+<td><strong><span style="color:blue"> v1 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>DE</td>
+<td>2025</td>
+<td><strong><span style="color:blue"> 1.5 </span></strong></td>
+<td><strong><span style="color:blue"> 6 </span></strong></td>
+<td></td>
+<td><strong><span style="color:blue"> v1 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="color:green"> v2 </span></strong>: <strong>Adding data</strong> to your csv table requires a new version <code>v2</code> for new 
+datapoints (capital_cost and lifetime in 2030, row=5), including a copy the existing data from <code>v1</code> as version <code>v2</code> 
+(reasoning see above)</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>region</th>
+<th>year</th>
+<th>capital_costs</th>
+<th>lifetime</th>
+<th>bandwidth_type</th>
+<th>version</th>
+<th>method</th>
+<th>source</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>DE</td>
+<td>2020</td>
+<td>1</td>
+<td>5</td>
+<td></td>
+<td><strong><span style="color:green"> v2 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>DE</td>
+<td>2025</td>
+<td>1.5</td>
+<td>6</td>
+<td></td>
+<td><strong><span style="color:green"> v2 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>DE</td>
+<td>2030</td>
+<td><strong><span style="color:green"> 2 </span></strong></td>
+<td><strong><span style="color:green"> 8 </span></strong></td>
+<td></td>
+<td><strong><span style="color:green"> v2 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="color:red"> v3 </span></strong>: <strong>Updating a datapoint</strong> (lifetime, row=8) requires a new version 
+<code>v3</code>, including a copy the existing data from <code>v2</code> as version <code>v3</code></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>region</th>
+<th>year</th>
+<th>capital_costs</th>
+<th>lifetime</th>
+<th>bandwidth_type</th>
+<th>version</th>
+<th>method</th>
+<th>source</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>DE</td>
+<td>2020</td>
+<td>1</td>
+<td>5</td>
+<td></td>
+<td><strong><span style="color:red"> v3 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>DE</td>
+<td>2025</td>
+<td>1.5</td>
+<td>6</td>
+<td></td>
+<td><strong><span style="color:red"> v3 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>DE</td>
+<td>2030</td>
+<td>2</td>
+<td><strong><span style="color:red"> 15 </span></strong></td>
+<td></td>
+<td><strong><span style="color:red"> v3 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="color:orange"> v4 </span></strong>: <strong>Updating a datapoint</strong> (capital_costs, row=11) requires a new 
+version <code>v4</code>, including a copy the existing data from <code>v3</code> as version <code>v4</code></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>region</th>
+<th>year</th>
+<th>capital_costs</th>
+<th>lifetime</th>
+<th>bandwidth_type</th>
+<th>version</th>
+<th>method</th>
+<th>source</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>DE</td>
+<td>2020</td>
+<td>1</td>
+<td>5</td>
+<td></td>
+<td><strong><span style="color:orange"> v4 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>DE</td>
+<td>2025</td>
+<td>1.5</td>
+<td>6</td>
+<td></td>
+<td><strong><span style="color:orange"> v4 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>DE</td>
+<td>2030</td>
+<td><strong><span style="color:orange"> 4 </span></strong></td>
+<td>15</td>
+<td></td>
+<td><strong><span style="color:orange"> v4 </span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Result on OEP: </p>
 <table>
 <thead>
 <tr>
@@ -425,14 +638,44 @@ set of coherent input data for a process. </p>
 </tr>
 </tbody>
 </table>
-<p><strong><span style="color:blue"> v1 </span></strong>: <strong>Initial data</strong></p>
-<p><strong><span style="color:green"> v2 </span></strong>: <strong>Adding data</strong> to your csv table requires a new version <code>v2</code> for new 
-datapoints (capital_cost and lifetime in 2030, row=5), including a copy the existing data from <code>v1</code> as version <code>v2</code> 
-(reasoning see above)</p>
-<p><strong><span style="color:red"> v3 </span></strong>: <strong>Updating a datapoint</strong> (lifetime, row=8) requires a new version 
-<code>v3</code>, including a copy the existing data from <code>v2</code> as version <code>v3</code></p>
-<p><strong><span style="color:orange"> v4 </span></strong>: <strong>Updating a datapoint</strong> (capital_costs, row=11) requires a new 
-version <code>v4</code>, including a copy the existing data from <code>v3</code> as version <code>v4</code></p>
+<h3 id="datatypes">Datatypes<a class="headerlink" href="#datatypes" title="Permanent link">&para;</a></h3>
+<p>Available datatypes and corresponding formatting examples:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">dtype</th>
+<th style="text-align: center;">example</th>
+<th style="text-align: center;">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">json</td>
+<td style="text-align: center;">"{""key1"": ""text"", ""key2"": ""text""}"</td>
+<td style="text-align: center;">{"key1": "text", ...} might work as well. If you're using an table edititor make sure to use ASCII characters only</td>
+</tr>
+<tr>
+<td style="text-align: center;">float array</td>
+<td style="text-align: center;">[0.02, 279.5]</td>
+<td style="text-align: center;">arrays with strings should be formatted as strings ("['string1', 'string2']"</td>
+</tr>
+<tr>
+<td style="text-align: center;">text</td>
+<td style="text-align: center;">"text"</td>
+<td style="text-align: center;">String data should have text as datatype (text serves as "string")</td>
+</tr>
+<tr>
+<td style="text-align: center;">integer</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">text array</td>
+<td style="text-align: center;">"[""TH"", ""BW""]"</td>
+<td style="text-align: center;">["TH","BW"] might work as well. If you're using an table edititor make sure to use ASCII characters only</td>
+</tr>
+</tbody>
+</table>
 <h3 id="table#naming">Table naming<a class="headerlink" href="#table#naming" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Note</p>
