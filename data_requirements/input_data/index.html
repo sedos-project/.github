@@ -66,6 +66,12 @@
                                 <a href="../../how_to_contribute_data/" class="nav-link">How to contribute data?</a>
                             </li>
                             <li class="navitem">
+                                <a href="../../data_preface/" class="nav-link">Data preface</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
                                 <a href="../../glossary/" class="nav-link">Glossary</a>
                             </li>
                         </ul>
@@ -118,6 +124,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#example" class="nav-link">Example</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             
@@ -146,6 +156,12 @@ model consists of two table types: "<a href="https://github.com/sedos-project/oe
   (see section <a href="http://127.0.0.1:8000/data_requirements/overview/#2#create#metadata">How to contribute data - 2. Create metadata</a></li>
 <li>Use a timeseries table to provide parameters with relation to a timeindex. Use the <a href="https://github.com/sedos-project/oedatamodel#timeseries-description">timeseries model column description</a> to make yourself familiar with the 
   fields and add metadata to your tables using the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_timeseries.json">example timeseries package metadata</a> as a reference.</li>
+</ul>
+<p><strong>Datamodel features</strong></p>
+<ul>
+<li><a href="">type</a> - use to specify multiple processes in one csv table (see <a href="">exmaple</a>) </li>
+<li><a href="https://github.com/sedos-project/oedatamodel#bandwidth-types-and-cell-methods">bandwidth_type</a> - specify how the 
+  data bandwidths are interpreted</li>
 </ul>
 <h3 id="input#and#output#energy#vectors">Input and output energy vectors<a class="headerlink" href="#input#and#output#energy#vectors" title="Permanent link">&para;</a></h3>
 <p>The input and output energy vectors of processes in SEDOS' reference energy system are defined in an external 
@@ -282,6 +298,7 @@ set of coherent input data for a process. </p>
 <th>id</th>
 <th>region</th>
 <th>year</th>
+<th>type</th>
 <th>capital_costs</th>
 <th>lifetime</th>
 <th>bandwidth_type</th>
@@ -296,6 +313,7 @@ set of coherent input data for a process. </p>
 <td>1</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td><strong><span style="color:blue"> 1 </span></strong></td>
 <td><strong><span style="color:blue"> 5 </span></strong></td>
 <td></td>
@@ -308,6 +326,7 @@ set of coherent input data for a process. </p>
 <td>2</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td><strong><span style="color:blue"> 1.5 </span></strong></td>
 <td><strong><span style="color:blue"> 6 </span></strong></td>
 <td></td>
@@ -327,6 +346,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <th>id</th>
 <th>region</th>
 <th>year</th>
+<th>type</th>
 <th>capital_costs</th>
 <th>lifetime</th>
 <th>bandwidth_type</th>
@@ -341,6 +361,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td>3</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td>1</td>
 <td>5</td>
 <td></td>
@@ -353,6 +374,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td>4</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td>1.5</td>
 <td>6</td>
 <td></td>
@@ -365,6 +387,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td>5</td>
 <td>DE</td>
 <td>2030</td>
+<td></td>
 <td><strong><span style="color:green"> 2 </span></strong></td>
 <td><strong><span style="color:green"> 8 </span></strong></td>
 <td></td>
@@ -383,6 +406,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <th>id</th>
 <th>region</th>
 <th>year</th>
+<th>type</th>
 <th>capital_costs</th>
 <th>lifetime</th>
 <th>bandwidth_type</th>
@@ -397,6 +421,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td>6</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td>1</td>
 <td>5</td>
 <td></td>
@@ -409,6 +434,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td>7</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td>1.5</td>
 <td>6</td>
 <td></td>
@@ -421,6 +447,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td>8</td>
 <td>DE</td>
 <td>2030</td>
+<td></td>
 <td>2</td>
 <td><strong><span style="color:red"> 15 </span></strong></td>
 <td></td>
@@ -439,6 +466,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <th>id</th>
 <th>region</th>
 <th>year</th>
+<th>type</th>
 <th>capital_costs</th>
 <th>lifetime</th>
 <th>bandwidth_type</th>
@@ -453,6 +481,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>9</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td>1</td>
 <td>5</td>
 <td></td>
@@ -465,6 +494,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>10</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td>1.5</td>
 <td>6</td>
 <td></td>
@@ -477,6 +507,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>11</td>
 <td>DE</td>
 <td>2030</td>
+<td></td>
 <td><strong><span style="color:orange"> 4 </span></strong></td>
 <td>15</td>
 <td></td>
@@ -494,6 +525,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <th>id</th>
 <th>region</th>
 <th>year</th>
+<th>type</th>
 <th>capital_costs</th>
 <th>lifetime</th>
 <th>bandwidth_type</th>
@@ -508,6 +540,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>1</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td><strong><span style="color:blue"> 1 </span></strong></td>
 <td><strong><span style="color:blue"> 5 </span></strong></td>
 <td></td>
@@ -520,6 +553,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>2</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td><strong><span style="color:blue"> 1.5 </span></strong></td>
 <td><strong><span style="color:blue"> 6 </span></strong></td>
 <td></td>
@@ -532,6 +566,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>3</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td>1</td>
 <td>5</td>
 <td></td>
@@ -544,6 +579,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>4</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td>1.5</td>
 <td>6</td>
 <td></td>
@@ -556,6 +592,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>5</td>
 <td>DE</td>
 <td>2030</td>
+<td></td>
 <td><strong><span style="color:green"> 2 </span></strong></td>
 <td><strong><span style="color:green"> 8 </span></strong></td>
 <td></td>
@@ -568,6 +605,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>6</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td>1</td>
 <td>5</td>
 <td></td>
@@ -580,6 +618,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>7</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td>1.5</td>
 <td>6</td>
 <td></td>
@@ -592,6 +631,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>8</td>
 <td>DE</td>
 <td>2030</td>
+<td></td>
 <td>2</td>
 <td><strong><span style="color:red"> 15 </span></strong></td>
 <td></td>
@@ -604,6 +644,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>9</td>
 <td>DE</td>
 <td>2020</td>
+<td></td>
 <td>1</td>
 <td>5</td>
 <td></td>
@@ -616,6 +657,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>10</td>
 <td>DE</td>
 <td>2025</td>
+<td></td>
 <td>1.5</td>
 <td>6</td>
 <td></td>
@@ -628,6 +670,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td>11</td>
 <td>DE</td>
 <td>2030</td>
+<td></td>
 <td><strong><span style="color:orange"> 4 </span></strong></td>
 <td>15</td>
 <td></td>
@@ -638,41 +681,48 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Versioning note</p>
+<ul>
+<li>Uploading a row which exists already in: "region, type, year, version" results in an error. </li>
+<li>Otherwise single or multiple rows can be added to already existing versions</li>
+</ul>
+</div>
 <h3 id="datatypes">Datatypes<a class="headerlink" href="#datatypes" title="Permanent link">&para;</a></h3>
 <p>Available datatypes and corresponding formatting examples:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">dtype</th>
-<th style="text-align: center;">example</th>
-<th style="text-align: center;">comment</th>
+<th align="center">dtype</th>
+<th align="center">example</th>
+<th align="center">comment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">json</td>
-<td style="text-align: center;">"{""key1"": ""text"", ""key2"": ""text""}"</td>
-<td style="text-align: center;">{"key1": "text", ...} might work as well. If you're using an table edititor make sure to use ASCII characters only</td>
+<td align="center">json</td>
+<td align="center">"{""key1"": ""text"", ""key2"": ""text""}"</td>
+<td align="center">{"key1": "text", ...} might work as well. If you're using an table edititor make sure to use ASCII characters only</td>
 </tr>
 <tr>
-<td style="text-align: center;">float array</td>
-<td style="text-align: center;">[0.02, 279.5]</td>
-<td style="text-align: center;">arrays with strings should be formatted as strings ("['string1', 'string2']"</td>
+<td align="center">float array</td>
+<td align="center">[0.02, 279.5]</td>
+<td align="center">arrays with strings should be formatted as strings ("['string1', 'string2']"</td>
 </tr>
 <tr>
-<td style="text-align: center;">text</td>
-<td style="text-align: center;">"text"</td>
-<td style="text-align: center;">String data should have text as datatype (text serves as "string")</td>
+<td align="center">text</td>
+<td align="center">"text"</td>
+<td align="center">String data should have text as datatype (text serves as "string")</td>
 </tr>
 <tr>
-<td style="text-align: center;">integer</td>
-<td style="text-align: center;">27</td>
-<td style="text-align: center;"></td>
+<td align="center">integer</td>
+<td align="center">27</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">text array</td>
-<td style="text-align: center;">"[""TH"", ""BW""]"</td>
-<td style="text-align: center;">["TH","BW"] might work as well. If you're using an table edititor make sure to use ASCII characters only</td>
+<td align="center">text array</td>
+<td align="center">"[""TH"", ""BW""]"</td>
+<td align="center">["TH","BW"] might work as well. If you're using an table edititor make sure to use ASCII characters only</td>
 </tr>
 </tbody>
 </table>
@@ -698,6 +748,9 @@ However, it is of utmost importance that every parameter name is linked to a sui
 your chosen parameter name is clear and common in the domain. In this case avoid acronyms.</p>
 <p>For more background information regarding for linking parameter names and ontology concepts, using OEM, see <a href="../ontology/#Ontological-annotation-of-data">here</a>.</p>
 <p>For a practical manual linking parameter names to a suitable ontology concepts, using oemetadata builder, see <a href="../ontology/#Link-a-parameter-name-to-a-suitable-ontology-concept">here</a>.</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>The example shows the full capabilities of the oedatamodel-parameter. Explanations and further information are 
+documented in the "comment" column in the example.</p>
 <h3 id="parameter#naming#in#case#of#missing#suitable#ontology#concept">Parameter naming in case of missing suitable ontology concept<a class="headerlink" href="#parameter#naming#in#case#of#missing#suitable#ontology#concept" title="Permanent link">&para;</a></h3>
 <p>It is likely that not every parameter concept is already covered by an ontology. In this case, linking your parameter name to a suitable ontology concept is not directly possible.</p>
 <p>It might, however, be indirectly possible by linking it to a distinct selection of related ontology concepts. 
