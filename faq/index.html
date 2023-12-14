@@ -212,7 +212,7 @@
   
     <li class="md-tabs__item">
       <a href="../data_requirements/overview/" class="md-tabs__link">
-        Data requirements
+        (Meta)data requirements
       </a>
     </li>
   
@@ -337,14 +337,14 @@
       
       
         <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-          Data requirements
+          (Meta)data requirements
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          Data requirements
+          (Meta)data requirements
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -471,9 +471,74 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         FAQ
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data#model#usage" class="md-nav__link">
+    Data model usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Data model usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar#data" class="md-nav__link">
+    Scalar data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeseries#data" class="md-nav__link">
+    Timeseries data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    Metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -513,11 +578,33 @@
 
 
 <h1 id="frequently#asked#questions#faq">Frequently Asked Questions (FAQ)<a class="headerlink" href="#frequently#asked#questions#faq" title="Permanent link">&para;</a></h1>
-<h1 id="data#model#usage">Data model usage<a class="headerlink" href="#data#model#usage" title="Permanent link">&para;</a></h1>
-<h2 id="scalar#data"><strong>Scalar data</strong><a class="headerlink" href="#scalar#data" title="Permanent link">&para;</a></h2>
+<p>This is the FAQ section. It will be updated from the Questions from the SEDOS Matrix Chat.</p>
+<h2 id="data#model#usage">Data model usage<a class="headerlink" href="#data#model#usage" title="Permanent link">&para;</a></h2>
+<p>This section centers around the data model usage.</p>
 <ol>
 <li>
-<details class="note">
+<details class="question">
+<summary>I am currently unsure what I should enter for OEP token. Have I overlooked any instructions?</summary>
+<ul>
+<li>You can find your API-Token in your OEP profile -&gt; in the top-right corner of the OEP website -&gt; under your 
+ name -&gt; settings -&gt; API-Token. See <a href="../how_to_contribute_data/#3#initialize#table#on#the#oep"><strong>here</strong></a></li>
+</ul>
+</details>
+</li>
+</ol>
+<h3 id="scalar#data"><strong>Scalar data</strong><a class="headerlink" href="#scalar#data" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<details class="question">
+<summary>Why do I get an error when uploading my CSV to OEP ?</summary>
+<ul>
+<li>The double-quotes of the JSONs were unfortunately not correct 
+ TODO: @FELIX - Was ist die solution hier???</li>
+</ul>
+</details>
+</li>
+<li>
+<details class="question">
 <summary>How to connect data points with sources?</summary>
 <p><strong>Question:</strong> Can I simply enter 'investment_cost': {'Bibtex X', 'Bibtex Y', 'Bibtex Z'} in the "source" 
 column to achieve an assignment to the values [600, 700, 500-800]?</p>
@@ -526,7 +613,7 @@ Bibtex Y, Bibtex Z'} in the order of related data points. </p>
 </details>
 </li>
 <li>
-<details class="note">
+<details class="question">
 <summary>Where is the difference between column type "float" and "float array"?</summary>
 <p><strong>Answer:</strong> The table below shows the expected column formatting:</p>
 <table>
@@ -557,13 +644,91 @@ Bibtex Y, Bibtex Z'} in the order of related data points. </p>
 </details>
 </li>
 </ol>
-<h2 id="timeseries#data"><strong>Timeseries data</strong><a class="headerlink" href="#timeseries#data" title="Permanent link">&para;</a></h2>
-<h1 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h1>
+<h3 id="timeseries#data"><strong>Timeseries data</strong><a class="headerlink" href="#timeseries#data" title="Permanent link">&para;</a></h3>
+<h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<details class="note">
+<details class="question">
+<summary>Why do I get an error when registering an OEP table with my metadata?</summary>
+<p>This can have many reasons. Please check, if:        </p>
+<ul>
+<li>
+<p>The last entry in a dictionary has no <code>,</code> (comma) behind the value. Try to format your JSON in Notepad++ 
+ before uploading. If it passes the error will not occur.</p>
+</li>
+<li>
+<p>"id": null, - The key wasn't there</p>
+</li>
+<li>
+<p>"description" key wasn't there - every column needs a description key. It can be <code>null</code> though.</p>
+</li>
+<li>
+<p>"name": "model_draft.hea_hh_heater_boil_dual_biomass", - it must be <strong>"model_draft"</strong> and <strong>not 
+ "model-draft"</strong>. See <a href="../data_requirements/metadata/#resource#keys"><strong>here</strong></a> </p>
+</li>
+<li>
+<p>The double-quotes of the JSONs were unfortunately not correct</p>
+</li>
+<li>
+<p>"type": "string", - string with small s; and not "type": "String"</p>
+</li>
+</ul>
+</details>
+</li>
+<li>
+<details class="question">
+<summary>Do the resources/schema/fields have to be in the correct order, or does it not matter?</summary>
+<p><strong>Answer:</strong> The order of the fields must be the same as the order of the columns in the CSV.</p>
+</details>
+</li>
+<li>
+<details class="question">
+<summary>If a document does not have a licence, does it automatically has a CC-BY licence or a copyright?</summary>
+<p><strong>Answer:</strong> If no licence is given, copyright applies. Follow <a href="../data_requirements/licensing/#missing#licence#-#using#data#without#an#open#licence">this pattern</a> for documentation.</p>
+</details>
+</li>
+</ol>
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<details class="question">
 <summary>What do "f" and "p" mean in the commodities?</summary>
 <p><strong>Answer:</strong> This distinguishes fuel-specific emissions ("f") from process-specific emissions ("p"). This is mainly relevant for some industrial processes.</p>
+</details>
+</li>
+<li>
+<details class="question">
+<summary>My process-table-name and parameter names contain hyphens <code>-</code>, is that allowed?</summary>
+<p><strong>Answer:</strong> <strong>No</strong>, in neither process-table-name or parameter nameshyphens <code>-</code> are allowed. Please stick to the <a href="../data_requirements/input_data/#naming#conventions#for#data#tables#and#parameters">naming conventions</a></p>
+</details>
+</li>
+<li>
+<details class="question">
+<summary>In which form should the sources be entered in the CSV tables?</summary>
+<p><strong>Answer:</strong> Please set your bibtexkey as the following pattern: <br><br>
+ <strong>[AP-number][author][year]</strong> <br><br>
+ <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{&#39;capacity_e_inst&#39;: &#39;8Kraft2021b, 8ADAC2023&#39;, &#39;capacity_tra_connection_flex_max&#39;: &#39;8Kraft2021b, 8ADAC2023&#39;, &#39;capacity_tra_vehicles_inst&#39;: &#39;8S&amp;PG2023&#39;, &#39;cost_fix_tra&#39;: &#39;8Kraft2023, 8ADAC2023, 8ADAC2023b&#39;, &#39;cost_inv_tra&#39;: &#39;8Kraft2021b, 8ADAC2023&#39;, &#39;cost_var&#39;: &#39;8Kraft2023, 8ADAC2023, 8ADAC2023b&#39;, &#39;efficiency_sto_in&#39;: &#39;8Keil2017&#39;, &#39;efficiency_sto_out&#39;: &#39;8Keil2017&#39;, &#39;efficiency_tra_electrical&#39;: &#39;8Kraft2021b, 8ADAC2023&#39;, &#39;efficiency_tra_g2v&#39;: &#39;8RuckeSchoe2022&#39;, &#39;efficiency_tra_v2g&#39;: &#39;8RuckeSchoe2022&#39;, &#39;lifetime&#39;: &#39;8Kraft2011&#39;, &#39;mileage&#39;: &#39;8BaumeHautz2014, 8Progn2021&#39;, &#39;occupancy_rate&#39;: &#39;8infas2018, 8AdolfBalze2014&#39;, &#39;sto_init&#39;: &#39;ownAssumption&#39;, &#39;sto_self_discharge&#39;: &#39;8XuBehre2023&#39;}
+</code></pre></div>
+ When you have multiple sources within a bandwidth, just separate the source by comma, as shown above.</p>
+</details>
+</li>
+<li>
+<details class="question">
+<summary>Should the unit of percent be specified in the metadata as in the Parameter_Set sheet on BWSync with "%" or as described in the AP1-pad as "percent" ( 3. [E] "unit": "percent", [0,100])?</summary>
+<p><strong>Answer:</strong> In the metadata you should use the symbol <code>%</code>. (Group decision -&gt; more convenient)</p>
+</details>
+</li>
+<li>
+<details class="question">
+<summary>Is it problematic that all data uploaded there can be viewed without restriction before our publication?</summary>
+<p><strong>Answer:</strong> When uploading your data to the OEP it is still listed as a "draft". This means that although they are already available for viewing, they are not prominently displayed (this only happens after a peer review). As long as the data is not published by us, nobody will accidentally come across it. But it is not impossible.</p>
+</details>
+</li>
+<li>
+<details class="question">
+<summary>Do the SEDOS-gits runs on an RLI or a German server?</summary>
+<p><strong>Answer:</strong> Our <a href="https://github.com/sedos-project">SEDOS repos</a> are all on GitHub.com right now. <br>
+The data is stored on the <a href="https://openenergy-platform.org/dataedit/view/model_draft?query=sedos&amp;tags=246">OpenEnergyPlatform</a>, the website only takes the data and forwards it to the OEP and also registers it on the <a href="https://databus.openenergyplatform.org/">Databus</a> (the data is only linked there). The OEP itself is located on a server at the University of Magdeburg.</p>
 </details>
 </li>
 </ol>

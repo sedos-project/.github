@@ -214,7 +214,7 @@
   
     <li class="md-tabs__item">
       <a href="../overview/" class="md-tabs__link md-tabs__link--active">
-        Data requirements
+        (Meta)data requirements
       </a>
     </li>
   
@@ -339,14 +339,14 @@
       
       
         <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-          Data requirements
+          (Meta)data requirements
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          Data requirements
+          (Meta)data requirements
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -463,6 +463,33 @@
           <li class="md-nav__item">
   <a href="#resource#keys#-#schema" class="md-nav__link">
     Resource Keys - Schema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional#set#of#metadata#information" class="md-nav__link">
+    Optional set of metadata information
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional set of metadata information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spatial#and#temporal#keys" class="md-nav__link">
+    Spatial and Temporal Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context#keys" class="md-nav__link">
+    Context Keys
   </a>
   
 </li>
@@ -611,7 +638,7 @@
 </ol>
 <h2 id="mandatory#set#of#metadata#information">Mandatory set of metadata information<a class="headerlink" href="#mandatory#set#of#metadata#information" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
-<p class="admonition-title">OEMetadata templates exist<p>You can build upon metadata templates (<a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_scalars.json">scalar template</a> and <a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_timeseries.json">timeseries template</a>).</p>
+<p class="admonition-title">OEMetadata templates exist<p><strong>Many metadata fields are already prefilled, if</strong> you can build upon metadata templates (<a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_scalars.json">scalar template</a> and <a href="https://raw.githubusercontent.com/sedos-project/oedatamodel/main/oedatamodel-parameter/datamodel_timeseries.json">timeseries template</a>).</p>
 </p>
 </div>
 <div class="admonition danger">
@@ -636,14 +663,14 @@
 <td align="center">name</td>
 <td align="center">A file name or database table name.  <br/><br/></td>
 <td align="center">oep_metadata_table_example_v15</td>
-<td align="center"><span style="color:red;">sedos_sector_process_name </span></td>
+<td align="center"><span style="color:red;">sector_process_name <br> <br> e.g. tra_road_mcar_bev_pass_0 </span></td>
 </tr>
 <tr>
 <td align="center">2</td>
 <td align="center">title</td>
 <td align="center">A human readable full title including author.</td>
 <td align="center">RLI - OEMetadata - Metadata example table</td>
-<td align="center"></td>
+<td align="center"><span style="color:red;">sedos_sector_process_name <br> <br> e.g. sedos_tra_road_mcar_bev_pass_0 </span></td>
 </tr>
 <tr>
 <td align="center">4</td>
@@ -733,9 +760,9 @@
 <tr>
 <td align="center">12.4.1</td>
 <td align="center">name</td>
-<td align="center">The SPDX identifier.</td>
+<td align="center">The SPDX identifier.                                                                       <br/></td>
 <td align="center">ODbL-1.0</td>
-<td align="center"></td>
+<td align="center"><span style="color:red;"> In case of <a href="../licensing/#missing#licence#-#using#data#without#an#open#licence">missing licence</a> </span></td>
 </tr>
 <tr>
 <td align="center">12.4.2</td>
@@ -869,9 +896,9 @@ The license of your entire csv.
 <tr>
 <td align="center"><strong><span style="color:red"> 15.2 </span></strong></td>
 <td align="center"><strong><span style="color:red"> name </span></strong></td>
-<td align="center"><strong><span style="color:red"> Requiered for oedatamodel upload </span></strong> <br> A name for the entire data package. The name must consist of only lowercase alphanumeric characters or underscore. It must not start with a number or underscore. In a database, this  will be the name of the table within the  schema containing it.  The name can correspond to the file name (minus the file-extension) of the data file describing the resource, if it complies with the naming convention above. Name also contains information about the <a href="https://openenergy-platform.org/dataedit/schemas">shema</a> on the OEP, use "." to seperate shema from table name.</td>
-<td align="center"><strong><span style="color:red"> model_draft.my_naming_convention_conform_table_name </span></strong></td>
+<td align="center">A name for the entire <br/>data package. The name must consist of only lowercase alphanumeric characters or underscore. It must not start with a number or underscore. In a database, this  will be the name of the table within the  schema containing it.  The name can correspond to the file name (minus the file-extension) of the data file describing the resource, if it complies with the naming convention above. Name also contains information about the <a href="https://openenergy-platform.org/dataedit/schemas">shema</a> on the OEP, use "." to seperate shema from table name.</td>
 <td align="center"></td>
+<td align="center"><strong><span style="color:red"> Requiered for oedatamodel upload </span></strong><br><br><strong><span style="color:red"> model_draft.sector_process_name <br><br> e.g. model_draft.tra_road_mcar_bev_pass_0 </span></strong></td>
 </tr>
 <tr>
 <td align="center">15.3</td>
@@ -941,7 +968,7 @@ The license of your entire csv.
 <td align="center">15.6.1.3</td>
 <td align="center">type</td>
 <td align="center">The <a href="#datatypes">data type</a> of the field. <br/>In <br/>case of a geom column in a database, also indicate the shape and CRS.</td>
-<td align="center">geometry(Point, 4326)</td>
+<td align="center">float array</td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -956,7 +983,7 @@ The license of your entire csv.
 <td align="center">isAbout</td>
 <td align="center">An array of objects with describe the field in OEO terms.</td>
 <td align="center"></td>
-<td align="center"></td>
+<td align="center"><span style="color:red;"> In case of <a href="../ontology/#annotation#conventions#for#automatic#data#processing">multiple concepts</a> use <br><strong>C)Case2</strong></span></td>
 </tr>
 <tr>
 <td align="center">15.6.1.5.1</td>
@@ -1000,8 +1027,297 @@ The license of your entire csv.
 <td align="center">https://openenergy-platform.org/ontology/oeo/OEO_00000311</td>
 <td align="center"></td>
 </tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
 </tbody>
 </table>
+<h2 id="optional#set#of#metadata#information">Optional set of metadata information<a class="headerlink" href="#optional#set#of#metadata#information" title="Permanent link">&para;</a></h2>
+<h3 id="spatial#and#temporal#keys">Spatial and Temporal Keys<a class="headerlink" href="#spatial#and#temporal#keys" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Key</th>
+      <th>Description</th>
+      <th>Example</th>
+      <th>SEDOS convention</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td><strong>spatial</strong></td>
+      <td>An object that describes the spatial context of the data it contains.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>10.1</td>
+      <td>location</td>
+      <td>A location of the data. In case of data where the location can be described as a point. May be specified as coordinates, URI, or addresses with street, house number, and zip code.</td>
+      <td>52.433509, 13.535855</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>10.2</td>
+      <td>extent</td>
+      <td>A covered area. May be the name of a region, or the geometry of a bounding box.</td>
+      <td>Europe</td>
+      <td><span style="color:red">Germany</span</td>
+    </tr>
+    <tr>
+      <td>10.3</td>
+      <td>resolution</td>
+      <td>Pixel size in case of a regular raster image. Reference to administrative level or other spatial division that is present as the smallest spatially distinguished unit size.</td>
+      <td>1 ha</td>
+      <td><span style="color:red">NUTS-0</span></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><strong>temporal</strong></td>
+      <td>An object with the time period covered in the data. Temporal information should either contain a "referenceDate" or the keys describing a time series; in rare cases both.</td>
+      <td></td>
+      <td><span style="color:red"> For scalars:</span> <br> 
+        <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;temporal&quot;: {
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &quot;referenceDate&quot;: &quot;2021&quot;,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;timeseries&quot;: [
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        {
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            &quot;start&quot;: &quot;2021-01-01&quot;,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            &quot;end&quot;: &quot;2070-12-31&quot;,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            &quot;resolution&quot;: &quot;yearly&quot;
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        }
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    ]
+</code></pre></div>
+        <span style="color:red"> For timeseries:</span>
+        <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;temporal&quot;: {
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&quot;referenceDate&quot;: &quot;2021&quot;,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&quot;timeseries&quot;: [
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    {
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        &quot;start&quot;: &quot;2021-01-01&quot;,
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        &quot;end&quot;: &quot;2021-12-31&quot;,
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    },
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    {
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        &quot;start&quot;: &quot;2024-01-01&quot;,
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        &quot;end&quot;: &quot;2024-12-31&quot;,
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    },
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    {
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        &quot;start&quot;: &quot;2027-01-01&quot;,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        &quot;end&quot;: &quot;2027-12-31&quot;,
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    },
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    {
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        &quot;start&quot;: &quot;2030-01-01&quot;,
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        &quot;end&quot;: &quot;2030-12-31&quot;,
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    },
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    {
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>        &quot;start&quot;: &quot;2035-01-01&quot;,
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        &quot;end&quot;: &quot;2035-12-31&quot;,
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    },
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>    {
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        &quot;start&quot;: &quot;2040-01-01&quot;,
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        &quot;end&quot;: &quot;2040-12-31&quot;,
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    },
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    {
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        &quot;start&quot;: &quot;2045-01-01&quot;,
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        &quot;end&quot;: &quot;2045-12-31&quot;,
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    },
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    {
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>        &quot;start&quot;: &quot;2050-01-01&quot;,
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>        &quot;end&quot;: &quot;2050-12-31&quot;,
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    },
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    {
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>        &quot;start&quot;: &quot;2060-01-01&quot;,
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>        &quot;end&quot;: &quot;2060-12-31&quot;,
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>    },
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    {
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>        &quot;start&quot;: &quot;2070-01-01&quot;,
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>        &quot;end&quot;: &quot;2070-12-31&quot;,
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>        &quot;resolution&quot;: &quot;hourly&quot;,
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>        &quot;alignment&quot;: &quot;left&quot;
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>    }
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>]
+</code></pre></div>
+
+   </td>
+    </tr>
+    <tr>
+      <td>11.1</td>
+      <td>referenceDate</td>
+      <td>The base year, month, or day. Point in time for which the data is meant to be accurate. The census data or a satellite image will have a reference date. Date Format is ISO 8601.</td>
+      <td>2016-01-01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11.2</td>
+      <td><strong>timeseries</strong></td>
+      <td>An array that describes the time series.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11.2.1</td>
+      <td>start</td>
+      <td>The beginning point in time of a time series.</td>
+      <td>2019-02-06T10:12:04+00:00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11.2.2</td>
+      <td>end</td>
+      <td>The end point in time of a time series.</td>
+      <td>2019-02-07T10:12:04+00:00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11.2.3</td>
+      <td>resolution</td>
+      <td>The time span between individual points of information in a time series.</td>
+      <td>30 s</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11.2.4</td>
+      <td>alignment</td>
+      <td>An indicator of whether stamps in a time series are left, right, or middle.</td>
+      <td>left</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11.2.5</td>
+      <td>aggregationType</td>
+      <td>Indicates whether the values are a sum, average, or current.</td>
+      <td>sum</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="context#keys">Context Keys<a class="headerlink" href="#context#keys" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr>
+      <th colspan="5"># Context Keys</th>
+    </tr>
+    <tr>
+      <th>#</th>
+      <th>Key</th>
+      <th>Description</th>
+      <th>Example</th>
+      <th>SEDOS convention</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><strong>context</strong></td>
+      <td>An object that describes the general setting, environment, or project leading to the creation or maintenance of this dataset. In science, this can be the research project.</td>
+      <td></td>
+      <td>
+ <span style="color:red">For example:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;context&quot;: {
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        &quot;homepage&quot;: &quot;https://sedos-project.github.io/.github/&quot;,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        &quot;documentation&quot;: &quot;https://sedos-project.github.io/.github/&quot;,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        &quot;sourceCode&quot;: &quot;https://github.com/sedos-project&quot;,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        &quot;contact&quot;: &quot;Hans-Christian.Gils@dlr.de&quot;,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        &quot;grantNo&quot;: &quot;03EI1040D&quot;,
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        &quot;fundingAgency&quot;: &quot;Bundesministerium fÃ¼r Wirtschaft und Klimaschutz (BMWK)&quot;,
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        &quot;fundingAgencyLogo&quot;: &quot;https://en.wikipedia.org/wiki/Federal_Ministry_for_Economic_Affairs_and_Climate_Action#/media/File:BMWi_Logo_2021.svg&quot;,
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        &quot;publisherLogo&quot;: &quot;https://www.dlr.de/static/media/Logo-de.697a8e1f.svg&quot;
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    },
+</code></pre></div>
+
+
+
+   </td>
+    </tr>
+    <tr>
+      <td>9.1</td>
+      <td>homepage</td>
+      <td>A URL of the project.</td>
+      <td>https://openenergy-platform.org/</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9.2</td>
+      <td>documentation</td>
+      <td>A URL of the project documentation.</td>
+      <td>https://openenergy-platform.org/about/</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9.3</td>
+      <td>sourceCode</td>
+      <td>A URL of the project's source code.</td>
+      <td>https://github.com/OpenEnergyPlatform</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9.4</td>
+      <td>contact</td>
+      <td>A reference to the creator or maintainer of the data set. It can be an email address or a GitHub handle.</td>
+      <td>contact@example.com</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9.5</td>
+      <td>grantNo</td>
+      <td>An identifying grant number. In case of a publicly funded project, this number is assigned by the funding agency.</td>
+      <td>01AB2345</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9.6</td>
+      <td>fundingAgency</td>
+      <td>A name of the entity providing the funding. This can be a government agency or a company.</td>
+      <td>Bundesministerium für Wirtschaft und Klimaschutz</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9.7</td>
+      <td>fundingAgencyLogo</td>
+      <td>A URL to the logo or image of the funding agency.</td>
+      <td>https://commons.wikimedia.org/wiki/File:BMWi_Logo_2021.svg#/media/File:BMWi_Logo_2021.svg</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9.8</td>
+      <td>publisherLogo</td>
+      <td>A URL to the logo of the publishing agency of data.</td>
+      <td>https://reiner-lemoine-institut.de//wp-content/uploads/2015/09/rlilogo.png</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="review#keys">Review Keys<a class="headerlink" href="#review#keys" title="Permanent link">&para;</a></h3>
 <p>When using the provided templates above, the review keys are prefilled already.</p>
 <table>
