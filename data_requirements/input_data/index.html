@@ -1,148 +1,637 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The documentation of the SEDOS data management">
+      
+      
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../metadata/">
+      
+      <link rel="icon" href="../../graphics/sedos_favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
         <title>Data - SEDOS Project</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">SEDOS Project</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data requirements <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Data</a>
-</li>
-                                    
-<li>
-    <a href="../nomenclature/" class="dropdown-item">Nomenclature</a>
-</li>
-                                    
-<li>
-    <a href="../metadata/" class="dropdown-item">Metadata</a>
-</li>
-                                    
-<li>
-    <a href="../ontology/" class="dropdown-item">Ontology</a>
-</li>
-                                    
-<li>
-    <a href="../licensing/" class="dropdown-item">Licensing</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../how_to_contribute_data/" class="nav-link">How to contribute data?</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../data_preface/" class="nav-link">Data preface</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../faq/" class="nav-link">FAQ</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../glossary/" class="nav-link">Glossary</a>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../overview/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../nomenclature/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#input#data" class="nav-link">Input data</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#datamodel" class="nav-link">Datamodel</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#data#tables" class="nav-link">Data tables</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#parameter#naming" class="nav-link">Parameter naming</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#example" class="nav-link">Example</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#output#data" class="nav-link">Output Data</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#output#datamodel" class="nav-link">Output Datamodel</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#input#data" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SEDOS Project" class="md-header__button md-logo" aria-label="SEDOS Project" data-md-component="logo">
+      
+  <img src="../../graphics/sedos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SEDOS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sedos-project/organization" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+        Data requirements
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../how_to_contribute_data/" class="md-tabs__link">
+      How to contribute data?
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../data_preface/" class="md-tabs__link">
+      Data preface
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../glossary/" class="md-tabs__link">
+      Glossary
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SEDOS Project" class="md-nav__button md-logo" aria-label="SEDOS Project" data-md-component="logo">
+      
+  <img src="../../graphics/sedos.png" alt="logo">
+
+    </a>
+    SEDOS Project
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sedos-project/organization" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Data requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Data requirements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datamodel" class="md-nav__link">
+    Datamodel
+  </a>
+  
+    <nav class="md-nav" aria-label="Datamodel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input#and#output#energy#vectors" class="md-nav__link">
+    Input and output energy vectors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data#tables" class="md-nav__link">
+    Data tables
+  </a>
+  
+    <nav class="md-nav" aria-label="Data tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming#conventions#for#data#tables#and#parameters" class="md-nav__link">
+    Naming conventions for data tables and parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delimiter" class="md-nav__link">
+    Delimiter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decimal#separator" class="md-nav__link">
+    Decimal separator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioning#convention" class="md-nav__link">
+    Versioning convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datatypes" class="md-nav__link">
+    Datatypes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table#naming" class="md-nav__link">
+    Table naming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter#naming" class="md-nav__link">
+    Parameter naming
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter naming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter#naming#in#case#of#missing#suitable#ontology#concept" class="md-nav__link">
+    Parameter naming in case of missing suitable ontology concept
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        Ontology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        Licensing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_to_contribute_data/" class="md-nav__link">
+        How to contribute data?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_preface/" class="md-nav__link">
+        Data preface
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
 
 <h1 id="input#data">Input data<a class="headerlink" href="#input#data" title="Permanent link">&para;</a></h1>
 <h2 id="datamodel">Datamodel<a class="headerlink" href="#datamodel" title="Permanent link">&para;</a></h2>
@@ -150,38 +639,39 @@
 be used to provide input data in SEDOS. This choice was made to allow ontological annotation of data. The data 
 model consists of two table types: "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_scalar.csv">scalar</a>" and "<a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/oedatamodel-parameter-datapackage_timeseries.csv">timeseries</a>". Please choose the table type accordingly, depending on the data you want to upload:</p>
 <ul>
-<li>Use scalar tables to provide parameters with no relation to a timeindex. To properly fill the table, read the 
-  <a href="https://github.com/sedos-project/oedatamodel#scalar-description">scalar model column description</a>. Use the 
+<li>Use scalar tables to provide parameters with no relation to a timeindex. <br>To properly fill the table, read the 
+  <a href="https://github.com/sedos-project/oedatamodel#scalar-description">scalar model column description</a>. <br>Use the 
   <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_scalars.json">example scalar package metadata</a> to write your own metadata 
-  (see section <a href="http://127.0.0.1:8000/data_requirements/overview/#2#create#metadata">How to contribute data - 2. Create metadata</a></li>
-<li>Use a timeseries table to provide parameters with relation to a timeindex. Use the <a href="https://github.com/sedos-project/oedatamodel#timeseries-description">timeseries model column description</a> to make yourself familiar with the 
+  (see section <a href="../../how_to_contribute_data/#create-metadata">How to contribute data - 2. Create metadata</a></li>
+<li>Use a timeseries table to provide parameters with relation to a timeindex. <br>Use the <a href="https://github.com/sedos-project/oedatamodel#timeseries-description">timeseries model column description</a> to make yourself familiar with the 
   fields and add metadata to your tables using the <a href="https://github.com/sedos-project/oedatamodel/blob/main/oedatamodel-parameter/datamodel_timeseries.json">example timeseries package metadata</a> as a reference.</li>
 </ul>
 <p><strong>Datamodel features</strong></p>
 <ul>
-<li><a href="">type</a> - use to specify multiple processes in one csv table (see <a href="">exmaple</a>) </li>
+<li><a href="">type</a> - use to specify multiple processes in one csv table (see <a href="https://github.com/sedos-project/oedatamodel#example-table">example</a>) </li>
 <li><a href="https://github.com/sedos-project/oedatamodel#bandwidth-types-and-cell-methods">bandwidth_type</a> - specify how the 
   data bandwidths are interpreted</li>
 </ul>
 <h3 id="input#and#output#energy#vectors">Input and output energy vectors<a class="headerlink" href="#input#and#output#energy#vectors" title="Permanent link">&para;</a></h3>
 <p>The input and output energy vectors of processes in SEDOS' reference energy system are defined in an external 
-table on the BW Sync&amp;Share, in the sheet <a href="https://bwsyncandshare.kit.edu/f/2458081675">input_output</a>.</p>
+table on the BW Sync&amp;Share, in the sheet <a href="https://bwsyncandshare.kit.edu/f/2458081675">Parameter_Input-Output</a>.</p>
 <p>For processes with multiple input and/or output energy vectors it might not clear to which energy vector a 
 parameter column refers. Thus, the information has to be specified if needed.</p>
 <p>By <code>default</code>, <strong>all</strong> parameters of a process as assigned to all inputs and outputs of a process from the BW 
-Sync&amp;Share table, sheet <a href="https://bwsyncandshare.kit.edu/f/2458081675">processes</a>
+Sync&amp;Share table - sheet: <a href="https://bwsyncandshare.kit.edu/f/2458081675">Process_Set</a>
 (the <code>default</code> does not appear in the input_output sheet, but is used in the backend of the data pipeline). <br> 
 <br>
 If needed, the <code>default</code> can be overwritten, simply by assigning other input(s) and output(s) to a specific 
-parameter of the process in the <a href="https://bwsyncandshare.kit.edu/f/2458081675">input_output</a> sheet.</p>
+parameter of the process in the <a href="https://bwsyncandshare.kit.edu/f/2458081675">Parameter_Input-Output</a> sheet.</p>
 <div class="admonition note">
 <p class="admonition-title">input_output insertion conventions</p>
 <ul>
-<li>separate inputs or outputs with <code>,</code> (comma) as in the input_output sheet below</li>
+<li>Enclose substituting inputs or outputs in squared brackets <code>[ ]</code>. E.g. </li>
+<li>separate inputs or outputs with <code>,</code> (comma)</li>
 </ul>
 </div>
-<p><strong>Example</strong> process: mob_road_mcar_ice_pass_diesel</p>
-<p>input_output sheet</p>
+<p><strong>Example</strong> </p>
+<p><em>Parameter_Input-Output</em> sheet</p>
 <table>
 <thead>
 <tr>
@@ -196,27 +686,41 @@ parameter of the process in the <a href="https://bwsyncandshare.kit.edu/f/245808
 <tr>
 <td>energy_conversion_efficiency_diesel</td>
 <td>mob_road_mcar_ice_pass_diesel</td>
+<td></td>
+<td>[pkm_road_mcar_short_exo, pkm_road_mcar_long_ex]</td>
+<td></td>
+</tr>
+<tr>
+<td>energy_conversion_efficiency_syndiesel</td>
+<td>mob_road_mcar_ice_pass_diesel</td>
+<td></td>
+<td>[pkm_road_mcar_short_exo, pkm_road_mcar_long_ex]</td>
+<td></td>
+</tr>
+<tr>
+<td>emission_factor_diesel</td>
+<td>mob_road_mcar_ice_pass_diesel</td>
 <td>diesel</td>
-<td>pkm_road_mcar_short_exo, pkm_road_mcar_long_ex</td>
-<td></td>
-</tr>
-<tr>
-<td>energy_conversion_efficiency_biodiesel</td>
-<td>mob_road_mcar_ice_pass_diesel</td>
-<td>biodiesel</td>
-<td>pkm_road_mcar_short_exo, pkm_road_mcar_long_ex</td>
-<td></td>
-</tr>
-<tr>
-<td>emission_factor</td>
-<td>mob_road_mcar_ice_pass_diesel</td>
-<td>diesel, biodiesel</td>
 <td>CO2</td>
+<td></td>
+</tr>
+<tr>
+<td>emission_factor_syndiesel</td>
+<td>mob_road_mcar_ice_pass_diesel</td>
+<td>syndiesel</td>
+<td>CO2</td>
+<td></td>
+</tr>
+<tr>
+<td>parameter1</td>
+<td>process 1</td>
+<td>[cane, honeymelon], heat, power</td>
+<td>[sugar, cinnamon], waste</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>In the <a href="https://bwsyncandshare.kit.edu/f/2458081675">processes</a> sheet, the process is assigned to:</p>
+<p>In the <a href="https://bwsyncandshare.kit.edu/f/2458081675">Process_Set</a> sheet, the process is assigned to:</p>
 <table>
 <thead>
 <tr>
@@ -227,9 +731,9 @@ parameter of the process in the <a href="https://bwsyncandshare.kit.edu/f/245808
 </thead>
 <tbody>
 <tr>
-<td>[diesel, syndiesel_ren, syndiesel_conv, biodiesel]</td>
+<td>[diesel, syndiesel, biodiesel]</td>
 <td>mob_road_mcar_ice_pass_diesel</td>
-<td>pkm_road_mcar_short_exo+ pkm_road_mcar_long_exo+CO2</td>
+<td>[pkm_road_mcar_short_exo, pkm_road_mcar_long_exo], CO2</td>
 </tr>
 </tbody>
 </table>
@@ -238,10 +742,10 @@ However, the process has different efficiencies depending on the fuel. <br></p>
 <p>All other process parameters of <em>mob_road_mcar_ice_pass_diesel</em>, such as: <em>investment_cost, operational_life_time, 
 mileage, occupancy_rate, market_share</em> are assigned to the <code>default</code> inputs (diesel, syndiesel_ren, syndiesel_conv, 
 biodiesel) and outputs (pkm_road_mcar_short_exo, pkm_road_mcar_long_exo, CO2) in the backend from the table sheet 
-<a href="https://bwsyncandshare.kit.edu/f/2458081675">processes</a>.  <br></p>
+<a href="https://bwsyncandshare.kit.edu/f/2458081675">Process_Set</a>.  <br></p>
 <p>It is for the data providers (WP4-8) to assess whether this is correct for each process with respect to the 
 modelling.  <br>
-If the <code>default</code> is incorrect, the <a href="https://bwsyncandshare.kit.edu/f/2458081675">input_output</a> sheet 
+If the <code>default</code> is incorrect, the <a href="https://bwsyncandshare.kit.edu/f/2458081675">Parameter_Input-Output</a> sheet 
 should be used to specify process parameters' inputs and outputs accordingly.</p>
 <h2 id="data#tables">Data tables<a class="headerlink" href="#data#tables" title="Permanent link">&para;</a></h2>
 <h3 id="naming#conventions#for#data#tables#and#parameters">Naming conventions for data tables and parameters<a class="headerlink" href="#naming#conventions#for#data#tables#and#parameters" title="Permanent link">&para;</a></h3>
@@ -276,13 +780,19 @@ Users need to correct them and their compliance is mandatory.</p>
 <h3 id="decimal#separator">Decimal separator<a class="headerlink" href="#decimal#separator" title="Permanent link">&para;</a></h3>
 <p>Use point <code>.</code> as decimal separator. </p>
 <h3 id="versioning#convention">Versioning convention<a class="headerlink" href="#versioning#convention" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Versioning pattern</p>
-<ul>
-<li><code>v</code> + <code>number</code> </li>
-</ul>
-</div>
-<p>Version your data with <strong>lowercase</strong> letter <code>v</code> and arabic number, e.g.: v1</p>
+<details class="note">
+<summary>Versioning pattern</summary>
+<p><br><strong>For SEDOS Reference Dataset</strong> (SRD)<br><br>
+<code>v</code> + <code>number</code> <br>
+Version your data with <strong>lowercase</strong> letter <code>v</code> and arabic number, e.g.: v1, v2, v3, v4, ..., v12, v13
+<br><br>
+<strong>For SEDOS Scenarios</strong> <br><br>
+When the data for the SRD is final, specific scenarios will be uploaded to showcase the application of the SRD in practice.
+It's done by selecting specific values from SRD's bandwidths and appending them with a <code>scenario version</code> to 
+respective tables. <br><br> 
+<code>s</code> + <code>number</code> <br>
+Version your data with <strong>lowercase</strong> letter <code>s</code> and arabic number, e.g.: s1, s2, s3, s4, ..., s12, s13</p>
+</details>
 <p><strong>Increase the version when</strong> you want to <strong>add or update data</strong> to a table that has been already uploaded to the OEP.
 The oedatamodel-API will append new data versions to an existing OEP table.
 <br></p>
@@ -358,7 +868,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 </thead>
 <tbody>
 <tr>
-<td>3</td>
+<td>1</td>
 <td>DE</td>
 <td>2020</td>
 <td></td>
@@ -371,7 +881,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td></td>
 </tr>
 <tr>
-<td>4</td>
+<td>2</td>
 <td>DE</td>
 <td>2025</td>
 <td></td>
@@ -384,7 +894,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td></td>
 </tr>
 <tr>
-<td>5</td>
+<td>3</td>
 <td>DE</td>
 <td>2030</td>
 <td></td>
@@ -418,7 +928,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 </thead>
 <tbody>
 <tr>
-<td>6</td>
+<td>1</td>
 <td>DE</td>
 <td>2020</td>
 <td></td>
@@ -431,7 +941,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td></td>
 </tr>
 <tr>
-<td>7</td>
+<td>2</td>
 <td>DE</td>
 <td>2025</td>
 <td></td>
@@ -444,7 +954,7 @@ datapoints (capital_cost and lifetime in 2030, row=5), including a copy the exis
 <td></td>
 </tr>
 <tr>
-<td>8</td>
+<td>3</td>
 <td>DE</td>
 <td>2030</td>
 <td></td>
@@ -478,7 +988,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 </thead>
 <tbody>
 <tr>
-<td>9</td>
+<td>1</td>
 <td>DE</td>
 <td>2020</td>
 <td></td>
@@ -491,7 +1001,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td></td>
 </tr>
 <tr>
-<td>10</td>
+<td>2</td>
 <td>DE</td>
 <td>2025</td>
 <td></td>
@@ -504,7 +1014,7 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 <td></td>
 </tr>
 <tr>
-<td>11</td>
+<td>3</td>
 <td>DE</td>
 <td>2030</td>
 <td></td>
@@ -518,7 +1028,12 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 </tr>
 </tbody>
 </table>
-<p>Result on OEP: </p>
+<div class="admonition note">
+<p class="admonition-title"><code>id</code> column numbering</p>
+<p>If you check <code>Automatically increase IDs, if IDs are already present in table</code> in the OEDatamodel-api when 
+uploading the data, the id's will be updated automatically - as shown in the <em>Example result on OEP</em> below.</p>
+</div>
+<p>Example result on OEP: </p>
 <table>
 <thead>
 <tr>
@@ -727,113 +1242,116 @@ version <code>v4</code>, including a copy the existing data from <code>v3</code>
 </tbody>
 </table>
 <h3 id="table#naming">Table naming<a class="headerlink" href="#table#naming" title="Permanent link">&para;</a></h3>
+<p>Follow the <a href="https://bwsyncandshare.kit.edu/f/2458081675">nomenclature</a> for table and process naming in sheet: 
+<strong>Nomenclature_Processes</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Note</p>
 <ul>
-<li>Create a new datapackage for each process, e.g. wind_onshore, chp, ... <br></li>
-<li>You can use a single datapackage for both demand data and constraints (tech-independent parameters) if the table size is sufficient, e.g.:<br> * emission limit,<br> * natural domestic limit,<br> * WACC </li>
+<li>Create a new data package for each process, e.g. wind_onshore, chp, ... <br></li>
+<li>Or use the <code>type</code> column to put multiple processes in one data package</li>
+<li>You can use a single datapackage for both demand data and other constraint data (tech-independent parameters),e.g.:<br> <ul>
+<li>emission limit,<br> </li>
+<li>natural domestic limit,<br> </li>
+<li>WACC </li>
+</ul>
+</li>
 </ul>
 </div>
-<p>Follow the <a href="../nomenclature/">nomenclature</a> for table and process naming.</p>
 <h2 id="parameter#naming">Parameter naming<a class="headerlink" href="#parameter#naming" title="Permanent link">&para;</a></h2>
+<p>Follow the <a href="https://bwsyncandshare.kit.edu/f/2458081675">nomenclature</a> for parameter naming in sheet: 
+<strong>Parameter_Set</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Note</p>
 <ul>
 <li>Parameter names must be linked to a concept in an ontology</li>
 </ul>
 </div>
-<p>Parameter names (to specify processes, constraints or techno-economic values) can basically be chosen freely. 
-However, it is of utmost importance that every parameter name is linked to a suitable ontological concept via the metadata to enable its clear interpretation.
+<p>It is importance that every parameter name is linked to a suitable ontological concept via the metadata to enable 
+its clear interpretation.
 <br> In case you cannot find a suitable ontology concept (e.g. because it's not in the ontology yet), please make sure 
-your chosen parameter name is clear and common in the domain. In this case avoid acronyms.</p>
-<p>For more background information regarding for linking parameter names and ontology concepts, using OEM, see <a href="../ontology/#Ontological-annotation-of-data">here</a>.</p>
-<p>For a practical manual linking parameter names to a suitable ontology concepts, using oemetadata builder, see <a href="../ontology/#Link-a-parameter-name-to-a-suitable-ontology-concept">here</a>.</p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>The example shows the full capabilities of the oedatamodel-parameter. Explanations and further information are 
-documented in the "comment" column in the example.</p>
+your chosen parameter name is clear and common in the domain. In this case avoid acronyms. <br></p>
+<div class="admonition note">
+<p class="admonition-title">Ontological annotations</p>
+<ul>
+<li>In the <a href="https://bwsyncandshare.kit.edu/f/2458081675">nomenclature</a> for parameter naming in sheet: 
+<strong>Parameter_Set</strong>, we made suggestions for suitable ontology concepts for usage across the SEDOS APs. 
+<br><br>Please use them or make suggestions of better suitable concepts.</li>
+</ul>
+</div>
+<p>For more background information regarding for linking parameter names and ontology concepts, using OEM, see <a href="../ontology/#Ontological-annotation-of-data"><strong>here</strong></a>.</p>
+<p>For a practical manual linking parameter names to a suitable ontology concepts, using oemetadata builder, see <a href="../ontology/#Link-a-parameter-name-to-a-suitable-ontology-concept"><strong>here</strong></a>.</p>
 <h3 id="parameter#naming#in#case#of#missing#suitable#ontology#concept">Parameter naming in case of missing suitable ontology concept<a class="headerlink" href="#parameter#naming#in#case#of#missing#suitable#ontology#concept" title="Permanent link">&para;</a></h3>
 <p>It is likely that not every parameter concept is already covered by an ontology. In this case, linking your parameter name to a suitable ontology concept is not directly possible.</p>
 <p>It might, however, be indirectly possible by linking it to a distinct selection of related ontology concepts. 
 In this case you would link your parameter name to multiple related concepts.</p>
-<p>For a practical manual linking parameter names to multiple related ontology concepts, using oemetadata builder, see <a href="../ontology/#Link-a-parameter-name-to-multiple-related-ontology-concepts">here</a>.</p>
-<h1 id="output#data">Output Data<a class="headerlink" href="#output#data" title="Permanent link">&para;</a></h1>
-<h2 id="output#datamodel">Output Datamodel<a class="headerlink" href="#output#datamodel" title="Permanent link">&para;</a></h2>
-<p>Datamodel: The <strong>OEDatamodel</strong> is used to represent input/output data for energysystem modelling. 
-Further information about the OEDatamodel can be found in the documentation at <a href="https://github.com/sedos-project/oedatamodel">sedos-project/oedatamodel</a>.</p></div>
-            </div>
-        </div>
+<p>For a practical manual linking parameter names to multiple related ontology concepts, using oemetadata builder, see <a href="../ontology/#Link-a-parameter-name-to-multiple-related-ontology-concepts"><strong>here</strong></a>.</p>
+<!-- 
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+@CM, HeHu, others uncomment and add section when time has come ..... :/
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+# Output Data 
+
+
+## Output Datamodel
+
+Datamodel: The **OEDatamodel** is used to represent input/output data for energysystem modelling. 
+Further information about the OEDatamodel can be found in the documentation at [sedos-project/oedatamodel](https://github.com/sedos-project/oedatamodel).
+
+-->
+
+
+
+
+
+                
+              </article>
             </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 - SEDOS Project Team
+
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
 </html>

@@ -1,131 +1,604 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The documentation of the SEDOS data management">
+      
+      
+      
+      
+        <link rel="prev" href="../input_data/">
+      
+      
+        <link rel="next" href="../ontology/">
+      
+      <link rel="icon" href="../../graphics/sedos_favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
         <title>Metadata - SEDOS Project</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">SEDOS Project</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data requirements <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
-</li>
-                                    
-<li>
-    <a href="../input_data/" class="dropdown-item">Data</a>
-</li>
-                                    
-<li>
-    <a href="../nomenclature/" class="dropdown-item">Nomenclature</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Metadata</a>
-</li>
-                                    
-<li>
-    <a href="../ontology/" class="dropdown-item">Ontology</a>
-</li>
-                                    
-<li>
-    <a href="../licensing/" class="dropdown-item">Licensing</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../how_to_contribute_data/" class="nav-link">How to contribute data?</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../data_preface/" class="nav-link">Data preface</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../faq/" class="nav-link">FAQ</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../glossary/" class="nav-link">Glossary</a>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../nomenclature/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../ontology/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#metadata" class="nav-link">Metadata</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#required#metadata#information" class="nav-link">Required metadata information</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#mandatory#set#of#metadata#information" class="nav-link">Mandatory set of metadata information</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metadata" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SEDOS Project" class="md-header__button md-logo" aria-label="SEDOS Project" data-md-component="logo">
+      
+  <img src="../../graphics/sedos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SEDOS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metadata
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sedos-project/organization" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+        Data requirements
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../how_to_contribute_data/" class="md-tabs__link">
+      How to contribute data?
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../data_preface/" class="md-tabs__link">
+      Data preface
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../glossary/" class="md-tabs__link">
+      Glossary
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SEDOS Project" class="md-nav__button md-logo" aria-label="SEDOS Project" data-md-component="logo">
+      
+  <img src="../../graphics/sedos.png" alt="logo">
+
+    </a>
+    SEDOS Project
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sedos-project/organization" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Data requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Data requirements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input_data/" class="md-nav__link">
+        Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Metadata
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Metadata
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required#metadata#information" class="md-nav__link">
+    Required metadata information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mandatory#set#of#metadata#information" class="md-nav__link">
+    Mandatory set of metadata information
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandatory set of metadata information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general#keys" class="md-nav__link">
+    General Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source#keys" class="md-nav__link">
+    Source Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provenience#keys" class="md-nav__link">
+    Provenience Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource#keys" class="md-nav__link">
+    Resource Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource#keys#-#schema" class="md-nav__link">
+    Resource Keys - Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review#keys" class="md-nav__link">
+    Review Keys
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        Ontology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        Licensing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_to_contribute_data/" class="md-nav__link">
+        How to contribute data?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_preface/" class="md-nav__link">
+        Data preface
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
 
 <h1 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h1>
 <p>In SEDOS the metadata standard <a href="https://github.com/OpenEnergyPlatform/oemetadata#open-energy-family---open-energy-metadata-oemetadata">OEMetadata v.1.5.1</a> is used.</p>
@@ -154,31 +627,36 @@
 <th align="center">Key</th>
 <th align="center">Description</th>
 <th align="center">Example</th>
+<th align="center">SEDOS convention</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center">1</td>
 <td align="center">name</td>
-<td align="center">A file name or database table name.</td>
+<td align="center">A file name or database table name.  <br/><br/></td>
 <td align="center">oep_metadata_table_example_v15</td>
+<td align="center"><span style="color:red;">sedos_sector_process_name </span></td>
 </tr>
 <tr>
 <td align="center">2</td>
 <td align="center">title</td>
 <td align="center">A human readable full title including author.</td>
 <td align="center">RLI - OEMetadata - Metadata example table</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">4</td>
 <td align="center">description</td>
 <td align="center">A description or abstract of the package. It should be usable as  summary information for the entire package that is described by the  metadata.</td>
 <td align="center">Example table used to illustrate the metadata structure and meaning.</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">6</td>
 <td align="center">subject</td>
 <td align="center">An array of objects with topics of the data in OEO terms.</td>
+<td align="center"></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -186,18 +664,21 @@
 <td align="center">name</td>
 <td align="center">The class label of the OEO terms.</td>
 <td align="center">energy</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">6.2</td>
 <td align="center">path</td>
 <td align="center">The URI of the class.</td>
 <td align="center">https://openenergy-platform.org/ontology/oeo/OEO_00000150</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">8</td>
 <td align="center">publicationDate</td>
 <td align="center">A date of publishing of the data or metadata. Date format is ISO 8601 (YYYY-MM-DD).</td>
 <td align="center">2019-02-06</td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -210,6 +691,7 @@
 <th align="center">Key</th>
 <th align="center">Description</th>
 <th align="center">Example</th>
+<th align="center">SEDOS convention</th>
 </tr>
 </thead>
 <tbody>
@@ -218,29 +700,34 @@
 <td align="center">sources</td>
 <td align="center">An array of objects with the used and underlying sources of the data and metadata.</td>
 <td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.1</td>
 <td align="center">title</td>
 <td align="center">A human readable title of the source, a document title or organisation name.</td>
 <td align="center">IPCC Fifth Assessment Report</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.2</td>
 <td align="center">description</td>
 <td align="center">A free text description of the data set.</td>
 <td align="center">Scientific climate change report by the UN</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.3</td>
 <td align="center">path</td>
 <td align="center">A URL to the original source.</td>
 <td align="center">https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_full.pdf</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.4</td>
 <td align="center">licenses</td>
 <td align="center">An array of objects under which the source is provided.</td>
+<td align="center"></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -248,83 +735,53 @@
 <td align="center">name</td>
 <td align="center">The SPDX identifier.</td>
 <td align="center">ODbL-1.0</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.4.2</td>
 <td align="center">title</td>
 <td align="center">The official (human readable) title of the license.</td>
 <td align="center">Open Data Commons Open Database License 1.0</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.4.3</td>
 <td align="center">path</td>
 <td align="center">A link to the license text.</td>
 <td align="center">https://opendatacommons.org/licenses/odbl/1-0/index.html</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.4.4</td>
 <td align="center">instruction</td>
 <td align="center">A short description of rights and restrictions. The use of tl;drLegal is recommended.</td>
 <td align="center">You are free to share and change, but you must attribute, and share derivations under the same license. See https://tldrlegal.com/license/odc-open-database-license-(odbl) for further information.</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">12.4.5</td>
 <td align="center">attribution</td>
 <td align="center">The copyright owner of the source. If attribution licenses are used, that name must be acknowledged.</td>
 <td align="center">© Intergovernmental Panel on Climate Change 2014</td>
-</tr>
-</tbody>
-</table>
-<h3 id="license#keys">License Keys<a class="headerlink" href="#license#keys" title="Permanent link">&para;</a></h3>
-<p>The license of your entire csv.</p>
-<table>
-<thead>
-<tr>
-<th align="center">#</th>
-<th align="center">Key</th>
-<th align="center">Description</th>
-<th align="center">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">13</td>
-<td align="center">licenses</td>
-<td align="center">An array of objects of the license(s) under which the described  package is provided. It can depend on the licenses of the sources  (copyleft or share-alike) or can be granted by the creator of the data.</td>
 <td align="center"></td>
 </tr>
-<tr>
-<td align="center">13.1</td>
-<td align="center">name</td>
-<td align="center">The SPDX identifier.</td>
-<td align="center">ODbL-1.0</td>
-</tr>
-<tr>
-<td align="center">13.2</td>
-<td align="center">title</td>
-<td align="center">The official (human readable) title of the license.</td>
-<td align="center">Open Data Commons Open Database License 1.0</td>
-</tr>
-<tr>
-<td align="center">13.3</td>
-<td align="center">path</td>
-<td align="center">A link to the license text.</td>
-<td align="center">https://opendatacommons.org/licenses/odbl/1-0/index.html</td>
-</tr>
-<tr>
-<td align="center">13.4</td>
-<td align="center">instruction</td>
-<td align="center">A short description of rights and restrictions. The use of tl;drLegal is recommended.</td>
-<td align="center">You are free to share and change, but you must attribute, and share derivations under the same license. See https://tldrlegal.com/license/odc-open-database-license-(odbl) for further information.</td>
-</tr>
-<tr>
-<td align="center">13.5</td>
-<td align="center">attribution</td>
-<td align="center">The copyright owner of the data. If attribution licenses are used, that name must be acknowledged.</td>
-<td align="center">© Reiner Lemoine Institut</td>
-</tr>
 </tbody>
 </table>
+<!-- 
+### License Keys
+
+The license of your entire csv.
+
+|   #  |     Key     |                                                                                                 Description                                                                                                 |                                                                                               Example                                                                                               | SEDOS convention |
+|:----:|:-----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------:|
+| 13   | licenses    | An array of objects of the license(s) under which the described  package is provided. It can depend on the licenses of the sources  (copyleft or share-alike) or can be granted by the creator of the data. |                                                                                                                                                                                                     |                  |
+| 13.1 | name        | The SPDX identifier.                                                                                                                                                                                        | ODbL-1.0                                                                                                                                                                                            |                  |
+| 13.2 | title       | The official (human readable) title of the license.                                                                                                                                                         | Open Data Commons Open Database License 1.0                                                                                                                                                         |                  |
+| 13.3 | path        | A link to the license text.                                                                                                                                                                                 | https://opendatacommons.org/licenses/odbl/1-0/index.html                                                                                                                                            |                  |
+| 13.4 | instruction | A short description of rights and restrictions. The use of tl;drLegal is recommended.                                                                                                                       | You are free to share and change, but you must attribute, and share derivations under the same license. See https://tldrlegal.com/license/odc-open-database-license-(odbl) for further information. |                  |
+| 13.5 | attribution | The copyright owner of the data. If attribution licenses are used, that name must be acknowledged.                                                                                                          | © Reiner Lemoine Institut                                                                                                                                                                           |                  |
+-->
+
 <h3 id="provenience#keys">Provenience Keys<a class="headerlink" href="#provenience#keys" title="Permanent link">&para;</a></h3>
 <p>Information about changes on the metadata.</p>
 <table>
@@ -334,6 +791,7 @@
 <th align="center">Key</th>
 <th align="center">Description</th>
 <th align="center">Example</th>
+<th align="center">SEDOS convention</th>
 </tr>
 </thead>
 <tbody>
@@ -342,36 +800,42 @@
 <td align="center">contributors</td>
 <td align="center">An array of objects of the people or organizations who contributed  to the data or metadata. Each object refers to one contributor. Every  contributor must have a title and property. The path, email, role and  organization properties are optional.</td>
 <td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">14.1</td>
 <td align="center">title</td>
 <td align="center">A name of the contributor.</td>
 <td align="center">Ludwig Hülk</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">14.2</td>
 <td align="center">email</td>
 <td align="center">A email address of the contributor or GitHub handle.</td>
 <td align="center">@Ludee</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">14.3</td>
 <td align="center">date</td>
 <td align="center">The date of the contribution. If the contribution took more than a  day, use the date of the final contribiution. Date Format is ISO 8601.</td>
 <td align="center">2016-06-16</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">14.4</td>
 <td align="center">object</td>
 <td align="center">The target of the contribution. Which part of the package was  supplied or changed. Can be the data, metadata or both (data and  metadata).</td>
 <td align="center">data and metadata</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">14.5</td>
 <td align="center">comment</td>
 <td align="center">A free text commentary on what has been done.</td>
 <td align="center">Fixed a typo in the title.</td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -384,6 +848,7 @@
 <th align="center">Key</th>
 <th align="center">Description</th>
 <th align="center">Example</th>
+<th align="center">SEDOS convention</th>
 </tr>
 </thead>
 <tbody>
@@ -392,36 +857,42 @@
 <td align="center">resources</td>
 <td align="center">An array of objects of the data. It describes the data resource as an individual file or (database) table.</td>
 <td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.1</td>
 <td align="center">profile</td>
 <td align="center">The profile of this descriptor according to the profiles  specification. This information is retained in order to comply with the  "Tabular Data Package" standard. Use "tabular-data-resource" for all  tables.</td>
 <td align="center">tabular-data-resource</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center"><strong><span style="color:red"> 15.2 </span></strong></td>
 <td align="center"><strong><span style="color:red"> name </span></strong></td>
 <td align="center"><strong><span style="color:red"> Requiered for oedatamodel upload </span></strong> <br> A name for the entire data package. The name must consist of only lowercase alphanumeric characters or underscore. It must not start with a number or underscore. In a database, this  will be the name of the table within the  schema containing it.  The name can correspond to the file name (minus the file-extension) of the data file describing the resource, if it complies with the naming convention above. Name also contains information about the <a href="https://openenergy-platform.org/dataedit/schemas">shema</a> on the OEP, use "." to seperate shema from table name.</td>
 <td align="center"><strong><span style="color:red"> model_draft.my_naming_convention_conform_table_name </span></strong></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.3</td>
 <td align="center">path</td>
 <td align="center">A URL that should be a permanent http(s) address or other path directly linking to the resource.</td>
 <td align="center">https://openenergy-platform.org/dataedit/view/openstreetmap/osm_deu_line</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.4</td>
 <td align="center">format</td>
 <td align="center">The file extension. 'csv', 'xls', 'json' etc. would be expected to  be the standard file extension for this type of resource. When you  upload your data to the OEDB, in the shown metadata string, the format  will be changed accordingly to 'PostgreSQL', since the data there are  stored in a database.</td>
 <td align="center">PostgreSQL</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.5</td>
 <td align="center">encoding</td>
 <td align="center">Specifies the character encoding of the resource's data file. The values should be one of the "Preferred MIME Names" for a character encoding registered with IANA. If no value for this key is specified then the default is UTF-8.</td>
 <td align="center">UTF-8</td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -434,6 +905,7 @@
 <th align="center">Key</th>
 <th align="center">Description</th>
 <th align="center">Example</th>
+<th align="center">SEDOS convention</th>
 </tr>
 </thead>
 <tbody>
@@ -442,11 +914,13 @@
 <td align="center">schema</td>
 <td align="center">An object that describes the structure of the present data. It  contains all fields (columns of the table), the primary key and optional  foreign keys.</td>
 <td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1</td>
 <td align="center">fields</td>
 <td align="center">An array of objects describing a column and providing name, description, type and unit.</td>
+<td align="center"></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -454,29 +928,34 @@
 <td align="center">name</td>
 <td align="center">The name of the field. The name must consist of only lowercase alphanumeric characters or underscore. It must not start with a number or underscore.</td>
 <td align="center">year</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.2</td>
 <td align="center">description</td>
 <td align="center">A text describing the field.</td>
 <td align="center">Reference year for which the data were collected.</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.3</td>
 <td align="center">type</td>
 <td align="center">The <a href="#datatypes">data type</a> of the field. <br/>In <br/>case of a geom column in a database, also indicate the shape and CRS.</td>
 <td align="center">geometry(Point, 4326)</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.4</td>
 <td align="center">unit</td>
 <td align="center">The unit, preferably SI-unit, that values in this field are mapped  to. If 'unit' doesn't apply to a field, use 'null'. If the unit is given  in a seperate field, reference this field.</td>
 <td align="center">MW</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.5</td>
 <td align="center">isAbout</td>
 <td align="center">An array of objects with describe the field in OEO terms.</td>
+<td align="center"></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -484,17 +963,20 @@
 <td align="center">name</td>
 <td align="center">The class label of the OEO terms.</td>
 <td align="center">wind energy converting unit</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.5.2</td>
 <td align="center">path</td>
 <td align="center">The URI of the class.</td>
 <td align="center">https://openenergy-platform.org/ontology/oeo/OEO_00000044</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.6</td>
 <td align="center">valueReference</td>
 <td align="center">An array of objects for an extended description of the values in the column in OEO terms.</td>
+<td align="center"></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -502,18 +984,21 @@
 <td align="center">value</td>
 <td align="center">The name of the value in the column.</td>
 <td align="center">onshore</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.6.2</td>
 <td align="center">name</td>
 <td align="center">The class label of the OEO terms.</td>
 <td align="center">onshore wind farm</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">15.6.1.6.3</td>
 <td align="center">path</td>
 <td align="center">The URI of the class.</td>
 <td align="center">https://openenergy-platform.org/ontology/oeo/OEO_00000311</td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -536,81 +1021,61 @@
 <td align="center">https://raw.githubusercontent.com/OpenEnergyPlatform/oemetadata/master/metadata/latest/context.json</td>
 </tr>
 </tbody>
-</table></div>
-            </div>
-        </div>
+</table>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+
+
+                
+              </article>
             </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 - SEDOS Project Team
+
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
 </html>
